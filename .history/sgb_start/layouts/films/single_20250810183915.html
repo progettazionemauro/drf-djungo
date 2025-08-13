@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Films – DRF + Vue</title>
+
+  <!-- CDN come nel blueprint -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <style>
+    body { font-family: system-ui, sans-serif; }
+    form { display:grid; gap:.5rem; margin:1rem 0; }
+    .row { display:grid; gap:.5rem; grid-template-columns:1fr 1fr; }
+    ul { list-style:none; padding:0; }
+    li { border:1px solid #ddd; border-radius:.5rem; padding:.8rem; margin:.6rem 0; }
+    img { max-width:160px; height:auto; display:block; margin-top:.4rem; }
+    .error { color:#b00020; }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>Film</h1>
+
+    <!-- FORM -->
+    <form @submit.prevent="addFilm">
+      <div class="row">
+        <input v-model.trim="newFilm.title" placeholder="Title" required />
+        <input v-model.trim="newFilm.link"  placeholder="Link (https://…)" required />
+      </div>
+      <input v-model.trim="newFilm.image" placeholder="Image URL (optional)" />
+      <textarea v-model.trim="newFilm.description" placeholder="Description"></textarea>
+      <button :disabled="loading">[[ loading ? 'Saving…' : 'Add Film' ]]</button>
+      <div class="error" v-if="error">[[ error ]]</div>
+    </form>
+
+    <!-- LISTA -->
+    <ul>
+      <li v-for="film in films" :key="film.id">
+        <strong>[[ film.title ]]</strong><br/>
+        <a :href="film.link" target="_blank" rel="noopener">Visit</a><br/>
+        <small v-if="film.description">[[ film.description ]]</small>
+        <img v-if="film.image" :src="film.image" alt="poster"/>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    new Vue({
+      delimiters: ['[[', ']]'],   // evita conflitti con {{ }} di Hugo
+      el: '#app',
+      data: {
+        films: [],
+        loading: false,
+        error: '',
+        newFilm: { title: '', link: '', description: '', image: '' },
+        API: 'http://127.0.0.1:8000/api'   // per ora hard-coded; poi lo prenderemo da hugo.yaml
+      },
+      mounted() {
+        this.fetchFilms();
+        // opzionale: refresh periodico
+        // setInterval(this.fetchFilms, 5000);
+      },
+      methods: {
+        async fetchFilms() {
+          this.error = '';
+          try {
+            const res = await axios.get(`${this.API}/films/`);
+            this.films = res.data;
+          } catch (e) {
+            this.error = `GET failed: ${e.response ? e.response.status : e.message}`;
+          }
+        },
+        async addFilm() {
+          this.loading = true; this.error = '';
+          try {
+            const res = await axios.post(`${this.API}/films/`, this.newFilm, {
+              headers: { 'Content-Type': 'application/json' }
+            });
+            this.films.unshift(res.data);
+            this.newFilm = { title: '', link: '', description: '', image: '' };
+          } catch (e) {
+            const body = e.response && e.response.data ? JSON.stringify(e.response.data) : e.message;
+            this.error = `POST failed: ${e.response ? e.response.status : ''} ${body}`;
+          } finally {
+            this.loading = false;
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

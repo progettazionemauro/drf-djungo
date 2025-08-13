@@ -1,0 +1,1053 @@
+==== Hugo Restart Wrapper ====
+mer 15 gen 2025, 21:53:37, CET
+Executing manage_posts.sh with arguments: add post_name Post Title 2025-01-15T10:00:00+0100 tag1,tag2 category1 img.jpg Alt Text Caption
+Waiting for 10 seconds before stopping Hugo...
+Stopping Hugo server...
+Found processes on port 1313: 49088
+49107. Killing them...
+Processes on port 1313 killed successfully.
+Waiting for 5 seconds before restarting Hugo...
+Starting Hugo server...
+Watching for changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/{archetypes,assets,content,data,i18n,layouts,static,themes}
+Watching for config changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/hugo.yaml
+Start building sites … 
+hugo v0.140.2-aae02ca612a02e085c08366a9c9279f4abb39d94+extended linux/amd64 BuildDate=2024-12-30T15:01:53Z VendorInfo=snap:0.140.2
+
+
+                   | EN  
+-------------------+-----
+  Pages            | 71  
+  Paginator pages  |  0  
+  Non-page files   |  0  
+  Static files     | 11  
+  Processed images |  0  
+  Aliases          |  7  
+  Cleaned          |  0  
+
+Built in 164 ms
+Environment: "development"
+Serving pages from disk
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0) 
+Press Ctrl+C to stop
+Hugo server started successfully.
+Hugo restart process completed.
+==== Hugo Restart Wrapper ====
+mer 15 gen 2025, 21:57:45, CET
+Executing manage_posts.sh with arguments: add post_name Post Title 2025-01-15T10:00:00+0100 tag1,tag2 category1 https://pbs.twimg.com/media/GhQOgDPXYAE7QeI?format=png&name=small Alt Text Caption
+
+Change detected, rebuilding site (#1).
+2025-01-15 21:57:45.807 +0100
+Source changed /contenuti/post_name.md
+Waiting for 10 seconds before stopping Hugo...
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 25 ms
+Stopping Hugo server...
+Found processes on port 1313: 49565
+49606. Killing them...
+Processes on port 1313 killed successfully.
+Waiting for 5 seconds before restarting Hugo...
+Starting Hugo server...
+Watching for changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/{archetypes,assets,content,data,i18n,layouts,static,themes}
+Watching for config changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/hugo.yaml
+Start building sites … 
+hugo v0.140.2-aae02ca612a02e085c08366a9c9279f4abb39d94+extended linux/amd64 BuildDate=2024-12-30T15:01:53Z VendorInfo=snap:0.140.2
+
+
+                   | EN  
+-------------------+-----
+  Pages            | 71  
+  Paginator pages  |  0  
+  Non-page files   |  0  
+  Static files     | 11  
+  Processed images |  0  
+  Aliases          |  7  
+  Cleaned          |  0  
+
+Built in 173 ms
+Environment: "development"
+Serving pages from disk
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0) 
+Press Ctrl+C to stop
+Hugo server started successfully.
+Hugo restart process completed.
+==== Hugo Restart Wrapper ====
+gio 16 gen 2025, 19:48:11, CET
+Executing manage_posts.sh with arguments: add post_name_1 Exploring the Cosmos 2025-01-15T10:00:00+0100 tag1,space category1,science https://pbs.twimg.com/media/GT5gYGVWkAAlCKN?format=png&name=small Alt Text Caption
+Waiting for 10 seconds before stopping Hugo...
+Stopping Hugo server...
+No processes found on port 1313.
+Waiting for 5 seconds before restarting Hugo...
+Starting Hugo server...
+Watching for changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/{archetypes,assets,content,data,i18n,layouts,static,themes}
+Watching for config changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/hugo.yaml
+Start building sites … 
+hugo v0.140.2-aae02ca612a02e085c08366a9c9279f4abb39d94+extended linux/amd64 BuildDate=2024-12-30T15:01:53Z VendorInfo=snap:0.140.2
+
+
+                   | EN  
+-------------------+-----
+  Pages            | 74  
+  Paginator pages  |  0  
+  Non-page files   |  0  
+  Static files     | 11  
+  Processed images |  0  
+  Aliases          |  7  
+  Cleaned          |  0  
+
+Built in 173 ms
+Environment: "development"
+Serving pages from disk
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0) 
+Press Ctrl+C to stop
+Hugo server started successfully.
+Hugo restart process completed.
+==== Hugo Restart Wrapper ====
+gio 16 gen 2025, 19:49:54, CET
+Executing manage_posts.sh with arguments: add post_name_2 The Future of AI 2025-01-15T10:00:00+0100 tag1,technology category1,innovation https://pbs.twimg.com/media/GhUkBbvWMAAVY0o?format=jpg&name=small Alt Text Caption
+
+Change detected, rebuilding site (#1).
+2025-01-16 19:49:54.505 +0100
+Source changed /contenuti/post_name_2.md
+Waiting for 10 seconds before stopping Hugo...
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 95 ms
+Stopping Hugo server...
+Found processes on port 1313: 4639
+18802. Killing them...
+Processes on port 1313 killed successfully.
+Waiting for 5 seconds before restarting Hugo...
+Starting Hugo server...
+Watching for changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/{archetypes,assets,content,data,i18n,layouts,static,themes}
+Watching for config changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/hugo.yaml
+Start building sites … 
+hugo v0.140.2-aae02ca612a02e085c08366a9c9279f4abb39d94+extended linux/amd64 BuildDate=2024-12-30T15:01:53Z VendorInfo=snap:0.140.2
+
+
+                   | EN  
+-------------------+-----
+  Pages            | 79  
+  Paginator pages  |  0  
+  Non-page files   |  0  
+  Static files     | 11  
+  Processed images |  0  
+  Aliases          |  7  
+  Cleaned          |  0  
+
+Built in 248 ms
+Environment: "development"
+Serving pages from disk
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0) 
+Press Ctrl+C to stop
+Hugo server started successfully.
+Hugo restart process completed.
+
+Change detected, rebuilding site (#1).
+2025-01-16 19:57:00.687 +0100
+Source changed /contenuti/post_name_1.md
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 53 ms
+
+Change detected, rebuilding site (#2).
+2025-01-16 19:57:04.688 +0100
+Source changed /contenuti/post_name_2.md
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 53 ms
+
+Change detected, rebuilding site (#3).
+2025-01-16 19:57:21.188 +0100
+Source changed /contenuti/post_name.md
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 90 ms
+==== Hugo Restart Wrapper ====
+gio 16 gen 2025, 19:59:03, CET
+Executing manage_posts.sh with arguments: add post_name_8 Unlocking Ancient Mysteries 2025-01-15T10:00:00+0100 tag1,archaeology category1,history https://pbs.twimg.com/media/GhSaFWjWkAAC7S3?format=jpg&name=small Alt Text Caption
+
+Change detected, rebuilding site (#4).
+2025-01-16 19:59:03.687 +0100
+Source changed /contenuti/post_name_8.md
+Waiting for 2 seconds before stopping Hugo...
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 65 ms
+Stopping Hugo server...
+Found processes on port 1313: 19174
+19190. Killing them...
+Processes on port 1313 killed successfully.
+Waiting for 1 second before restarting Hugo...
+Starting Hugo server with live reload...
+Watching for changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/{archetypes,assets,content,data,i18n,layouts,static,themes}
+Watching for config changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/hugo.yaml
+Start building sites … 
+hugo v0.140.2-aae02ca612a02e085c08366a9c9279f4abb39d94+extended linux/amd64 BuildDate=2024-12-30T15:01:53Z VendorInfo=snap:0.140.2
+
+
+                   | EN  
+-------------------+-----
+  Pages            | 73  
+  Paginator pages  |  0  
+  Non-page files   |  0  
+  Static files     | 11  
+  Processed images |  0  
+  Aliases          |  7  
+  Cleaned          |  0  
+
+Built in 200 ms
+Environment: "development"
+Serving pages from disk
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0) 
+Press Ctrl+C to stop
+Hugo server started successfully.
+Hugo restart process completed.
+==== Hugo Restart Wrapper ====
+gio 16 gen 2025, 20:00:42, CET
+Executing manage_posts.sh with arguments: add post_name_7 Climbing the Tallest Peaks 2025-01-15T10:00:00+0100 tag1,climbing category1,exploration https://pbs.twimg.com/media/GhXftPHWwAAoYMs?format=jpg&name=small Alt Text Caption
+
+Change detected, rebuilding site (#1).
+2025-01-16 20:00:42.759 +0100
+Source changed /contenuti/post_name_7.md
+Waiting for 2 seconds before stopping Hugo...
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 30 ms
+Stopping Hugo server...
+Found processes on port 1313: 20197
+20216. Killing them...
+Processes on port 1313 killed successfully.
+Waiting for 1 second before restarting Hugo...
+Starting Hugo server with live reload...
+Watching for changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/{archetypes,assets,content,data,i18n,layouts,static,themes}
+Watching for config changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/hugo.yaml
+Start building sites … 
+hugo v0.140.2-aae02ca612a02e085c08366a9c9279f4abb39d94+extended linux/amd64 BuildDate=2024-12-30T15:01:53Z VendorInfo=snap:0.140.2
+
+
+                   | EN  
+-------------------+-----
+  Pages            | 78  
+  Paginator pages  |  0  
+  Non-page files   |  0  
+  Static files     | 11  
+  Processed images |  0  
+  Aliases          |  7  
+  Cleaned          |  0  
+
+Built in 216 ms
+Environment: "development"
+Serving pages from disk
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0) 
+Press Ctrl+C to stop
+Hugo server started successfully.
+Hugo restart process completed.
+
+Change detected, rebuilding site (#1).
+2025-01-16 20:02:23.755 +0100
+Source changed /contenuti/post_name_8.md
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 54 ms
+==== Hugo Restart Wrapper ====
+gio 16 gen 2025, 20:04:09, CET
+Executing manage_posts.sh with arguments: add post_name_3 Understanding Quantum Physics 2025-01-15T10:00:00+0100 tag1,quantum category1,education https://pbs.twimg.com/media/GhXtjH0WMAAELz3?format=jpg&name=small Alt Text Caption
+
+Change detected, rebuilding site (#2).
+2025-01-16 20:04:09.756 +0100
+Source changed /contenuti/post_name_3.md
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 49 ms
+Waiting for 2 seconds before stopping Hugo...
+Stopping Hugo server...
+Found processes on port 1313: 20580
+20605. Killing them...
+Processes on port 1313 killed successfully.
+Waiting for 1 second before restarting Hugo...
+Starting Hugo server with live reload...
+Watching for changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/{archetypes,assets,content,data,i18n,layouts,static,themes}
+Watching for config changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/hugo.yaml
+Start building sites … 
+hugo v0.140.2-aae02ca612a02e085c08366a9c9279f4abb39d94+extended linux/amd64 BuildDate=2024-12-30T15:01:53Z VendorInfo=snap:0.140.2
+
+
+                   | EN  
+-------------------+-----
+  Pages            | 78  
+  Paginator pages  |  0  
+  Non-page files   |  0  
+  Static files     | 11  
+  Processed images |  0  
+  Aliases          |  7  
+  Cleaned          |  0  
+
+Built in 235 ms
+Environment: "development"
+Serving pages from disk
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0) 
+Press Ctrl+C to stop
+Hugo server started successfully.
+Hugo restart process completed.
+==== Hugo Restart Wrapper ====
+gio 16 gen 2025, 20:07:53, CET
+Executing manage_posts.sh with arguments: add post_name_1 Exploring the Cosmos 2025-01-15T10:00:00+0100 tag1,space category1,science https://pbs.twimg.com/media/GhUZFeTbcAARrwi?format=jpg&name=small Alt Text Updated Updated Caption
+
+Change detected, rebuilding site (#1).
+2025-01-16 20:07:53.763 +0100
+Source changed /contenuti/post_name_1.md
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 71 ms
+Waiting for 2 seconds before stopping Hugo...
+Stopping Hugo server...
+Found processes on port 1313: 21410
+21428. Killing them...
+Processes on port 1313 killed successfully.
+Waiting for 1 second before restarting Hugo...
+Starting Hugo server with live reload...
+Watching for changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/{archetypes,assets,content,data,i18n,layouts,static,themes}
+Watching for config changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/hugo.yaml
+Start building sites … 
+hugo v0.140.2-aae02ca612a02e085c08366a9c9279f4abb39d94+extended linux/amd64 BuildDate=2024-12-30T15:01:53Z VendorInfo=snap:0.140.2
+
+
+                   | EN  
+-------------------+-----
+  Pages            | 81  
+  Paginator pages  |  0  
+  Non-page files   |  0  
+  Static files     | 11  
+  Processed images |  0  
+  Aliases          |  7  
+  Cleaned          |  0  
+
+Built in 175 ms
+Environment: "development"
+Serving pages from disk
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0) 
+Press Ctrl+C to stop
+Hugo server started successfully.
+Hugo restart process completed.
+==== Hugo Restart Wrapper ====
+gio 16 gen 2025, 20:08:45, CET
+Executing manage_posts.sh with arguments: add post_name_2 The Future of AI 2025-01-15T10:00:00+0100 tag1,technology category1,innovation https://pbs.twimg.com/media/GglDoTUXYAAN1Pp?format=jpg&name=small Alt Text Updated Updated Caption
+
+Change detected, rebuilding site (#1).
+2025-01-16 20:08:45.530 +0100
+Source changed /contenuti/post_name_2.md
+Waiting for 2 seconds before stopping Hugo...
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 31 ms
+Stopping Hugo server...
+Found processes on port 1313: 21965
+21985. Killing them...
+Processes on port 1313 killed successfully.
+Waiting for 1 second before restarting Hugo...
+Starting Hugo server with live reload...
+Watching for changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/{archetypes,assets,content,data,i18n,layouts,static,themes}
+Watching for config changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/hugo.yaml
+Start building sites … 
+hugo v0.140.2-aae02ca612a02e085c08366a9c9279f4abb39d94+extended linux/amd64 BuildDate=2024-12-30T15:01:53Z VendorInfo=snap:0.140.2
+
+
+                   | EN  
+-------------------+-----
+  Pages            | 86  
+  Paginator pages  |  0  
+  Non-page files   |  0  
+  Static files     | 11  
+  Processed images |  0  
+  Aliases          |  7  
+  Cleaned          |  0  
+
+Built in 221 ms
+Environment: "development"
+Serving pages from disk
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0) 
+Press Ctrl+C to stop
+Hugo server started successfully.
+Hugo restart process completed.
+==== Hugo Restart Wrapper ====
+gio 16 gen 2025, 20:12:34, CET
+Executing manage_posts.sh with arguments: delete post_name_1
+Waiting for 2 seconds before stopping Hugo...
+
+Change detected, rebuilding site (#1).
+2025-01-16 20:12:35.043 +0100
+Source changed /contenuti/post_name_1.md
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 45 ms
+Stopping Hugo server...
+Found processes on port 1313: 22284
+22306. Killing them...
+Processes on port 1313 killed successfully.
+Waiting for 1 second before restarting Hugo...
+Starting Hugo server with live reload...
+Watching for changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/{archetypes,assets,content,data,i18n,layouts,static,themes}
+Watching for config changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/hugo.yaml
+Start building sites … 
+hugo v0.140.2-aae02ca612a02e085c08366a9c9279f4abb39d94+extended linux/amd64 BuildDate=2024-12-30T15:01:53Z VendorInfo=snap:0.140.2
+
+
+                   | EN  
+-------------------+-----
+  Pages            | 83  
+  Paginator pages  |  0  
+  Non-page files   |  0  
+  Static files     | 11  
+  Processed images |  0  
+  Aliases          |  7  
+  Cleaned          |  0  
+
+Built in 302 ms
+Environment: "development"
+Serving pages from disk
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0) 
+Press Ctrl+C to stop
+Hugo server started successfully.
+Hugo restart process completed.
+==== Hugo Restart Wrapper ====
+gio 16 gen 2025, 20:13:16, CET
+Executing manage_posts.sh with arguments: delete post_name_2
+
+Change detected, rebuilding site (#1).
+2025-01-16 20:13:16.596 +0100
+Source changed /contenuti/post_name_2.md
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 21 ms
+Waiting for 2 seconds before stopping Hugo...
+Stopping Hugo server...
+Found processes on port 1313: 23181
+23200. Killing them...
+Processes on port 1313 killed successfully.
+Waiting for 1 second before restarting Hugo...
+Starting Hugo server with live reload...
+Watching for changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/{archetypes,assets,content,data,i18n,layouts,static,themes}
+Watching for config changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/hugo.yaml
+Start building sites … 
+hugo v0.140.2-aae02ca612a02e085c08366a9c9279f4abb39d94+extended linux/amd64 BuildDate=2024-12-30T15:01:53Z VendorInfo=snap:0.140.2
+
+
+                   | EN  
+-------------------+-----
+  Pages            | 78  
+  Paginator pages  |  0  
+  Non-page files   |  0  
+  Static files     | 11  
+  Processed images |  0  
+  Aliases          |  7  
+  Cleaned          |  0  
+
+Built in 254 ms
+Environment: "development"
+Serving pages from disk
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0) 
+Press Ctrl+C to stop
+Hugo server started successfully.
+Hugo restart process completed.
+==== Hugo Restart Wrapper ====
+gio 16 gen 2025, 20:14:21, CET
+Executing manage_posts.sh with arguments: delete post_name_7
+
+Change detected, rebuilding site (#1).
+2025-01-16 20:14:22.058 +0100
+Source changed /contenuti/post_name_7.md
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0)
+Total in 23 ms
+Waiting for 2 seconds before stopping Hugo...
+Stopping Hugo server...
+Found processes on port 1313: 23502
+23521. Killing them...
+Processes on port 1313 killed successfully.
+Waiting for 1 second before restarting Hugo...
+Starting Hugo server with live reload...
+Watching for changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/{archetypes,assets,content,data,i18n,layouts,static,themes}
+Watching for config changes in /home/mauro/Scrivania/djungo-iso/djungo-iso/sgb_start/hugo.yaml
+Start building sites … 
+hugo v0.140.2-aae02ca612a02e085c08366a9c9279f4abb39d94+extended linux/amd64 BuildDate=2024-12-30T15:01:53Z VendorInfo=snap:0.140.2
+
+
+                   | EN  
+-------------------+-----
+  Pages            | 73  
+  Paginator pages  |  0  
+  Non-page files   |  0  
+  Static files     | 11  
+  Processed images |  0  
+  Aliases          |  7  
+  Cleaned          |  0  
+
+Built in 170 ms
+Environment: "development"
+Serving pages from disk
+Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+Web Server is available at http://localhost:1313/ (bind address 0.0.0.0) 
+Press Ctrl+C to stop
+Hugo server started successfully.
+Hugo restart process completed.
+==== Hugo Restart Wrapper ====
+gio 16 gen 2025, 19:57:55, UTC
+Executing manage_posts.sh with arguments: delete lasagna
+Stopping Hugo server...
+Found processes on port 1313: 25594
+25611. Killing them...
+Processes on port 1313 killed successfully.
+Starting Hugo server...
+Hugo server started successfully.
+Hugo restart process completed.
+Hugo provides its own webserver which builds and serves the site.
+While hugo server is high performance, it is a webserver with limited options.
+
+The `hugo server` command will by default write and serve files from disk, but
+you can render to memory by using the `--renderToMemory` flag. This can be
+faster in some cases, but it will consume more memory.
+
+By default hugo will also watch your files for any changes you make and
+automatically rebuild the site. It will then live reload any open browser pages
+and push the latest content to them. As most Hugo sites are built in a fraction
+of a second, you will be able to save and see your changes nearly instantly.
+
+Usage:
+  hugo server [command] [flags]
+  hugo server [command]
+
+Aliases:
+  server, serve
+
+Available Commands:
+  trust       Install the local CA in the system trust store.
+
+Flags:
+      --appendPort               append port to baseURL (default true)
+  -b, --baseURL string           hostname (and path) to the root, e.g. https://spf13.com/
+      --bind string              interface to which the server will bind (default "127.0.0.1")
+  -D, --buildDrafts              include content marked as draft
+  -E, --buildExpired             include expired content
+  -F, --buildFuture              include content with publishdate in the future
+      --cacheDir string          filesystem path to cache directory
+      --cleanDestinationDir      remove files from destination not found in static directories
+  -c, --contentDir string        filesystem path to content directory
+      --disableBrowserError      do not show build errors in the browser
+      --disableFastRender        enables full re-renders on changes
+      --disableKinds strings     disable different kind of pages (home, RSS etc.)
+      --disableLiveReload        watch without enabling live browser reload on rebuild
+      --enableGitInfo            add Git revision, date, author, and CODEOWNERS info to the pages
+      --forceSyncStatic          copy all files when static is changed.
+      --gc                       enable to run some cleanup tasks (remove unused cache files) after the build
+  -h, --help                     help for server
+      --ignoreCache              ignores the cache directory
+  -l, --layoutDir string         filesystem path to layout directory
+      --liveReloadPort int       port for live reloading (i.e. 443 in HTTPS proxy situations) (default -1)
+      --minify                   minify any supported output format (HTML, XML etc.)
+  -N, --navigateToChanged        navigate to changed content file on live browser reload
+      --noBuildLock              don't create .hugo_build.lock file
+      --noChmod                  don't sync permission mode of files
+      --noHTTPCache              prevent HTTP caching
+      --noTimes                  don't sync modification time of files
+  -O, --openBrowser              open the site in a browser after server startup
+      --panicOnWarning           panic on first WARNING log
+      --poll string              set this to a poll interval, e.g --poll 700ms, to use a poll based approach to watch for file system changes
+  -p, --port int                 port on which the server will listen (default 1313)
+      --pprof                    enable the pprof server (port 8080)
+      --printI18nWarnings        print missing translations
+      --printMemoryUsage         print memory usage to screen at intervals
+      --printPathWarnings        print warnings on duplicate target paths etc.
+      --printUnusedTemplates     print warnings on unused templates.
+      --renderSegments strings   named segments to render (configured in the segments config)
+      --renderStaticToDisk       serve static files from disk and dynamic files from memory
+      --templateMetrics          display metrics about template executions
+      --templateMetricsHints     calculate some improvement hints when combined with --templateMetrics
+  -t, --theme strings            themes to use (located in /themes/THEMENAME/)
+      --tlsAuto                  generate and use locally-trusted certificates.
+      --tlsCertFile string       path to TLS certificate file
+      --tlsKeyFile string        path to TLS key file
+      --trace file               write trace to file (not useful in general)
+  -w, --watch                    watch filesystem for changes and recreate as needed (default true)
+
+Global Flags:
+      --clock string               set the clock used by Hugo, e.g. --clock 2021-11-06T22:30:00.00+09:00
+      --config string              config file (default is hugo.yaml|json|toml)
+      --configDir string           config dir (default "config")
+  -d, --destination string         filesystem path to write files to
+  -e, --environment string         build environment
+      --ignoreVendorPaths string   ignores any _vendor for module paths matching the given Glob pattern
+      --logLevel string            log level (debug|info|warn|error)
+      --quiet                      build in quiet mode
+  -M, --renderToMemory             render to memory (mostly useful when running the server)
+  -s, --source string              filesystem path to read files relative from
+      --themesDir string           filesystem path to themes directory
+
+Use "hugo server [command] --help" for more information about a command.
+
+Error: command error: Unable to locate config file or config directory. Perhaps you need to create a new site.
+Run `hugo help new` for details.
+==== Hugo Restart Wrapper ====
+gio 16 gen 2025, 20:00:08, UTC
+Executing manage_posts.sh with arguments: add neve Neve 2005-01-16T00:00:00 travel adventure,food,health,art,entertainment,science,lifestyle https://pbs.twimg.com/media/GhbHZuUXQAA4rUV?format=jpg&name=900x900 Default Alt Text Default Caption 
+Stopping Hugo server...
+No processes found on port 1313.
+Starting Hugo server...
+Hugo provides its own webserver which builds and serves the site.
+While hugo server is high performance, it is a webserver with limited options.
+
+The `hugo server` command will by default write and serve files from disk, but
+you can render to memory by using the `--renderToMemory` flag. This can be
+faster in some cases, but it will consume more memory.
+
+By default hugo will also watch your files for any changes you make and
+automatically rebuild the site. It will then live reload any open browser pages
+and push the latest content to them. As most Hugo sites are built in a fraction
+of a second, you will be able to save and see your changes nearly instantly.
+
+Usage:
+  hugo server [command] [flags]
+  hugo server [command]
+
+Aliases:
+  server, serve
+
+Available Commands:
+  trust       Install the local CA in the system trust store.
+
+Flags:
+      --appendPort               append port to baseURL (default true)
+  -b, --baseURL string           hostname (and path) to the root, e.g. https://spf13.com/
+      --bind string              interface to which the server will bind (default "127.0.0.1")
+  -D, --buildDrafts              include content marked as draft
+  -E, --buildExpired             include expired content
+  -F, --buildFuture              include content with publishdate in the future
+      --cacheDir string          filesystem path to cache directory
+      --cleanDestinationDir      remove files from destination not found in static directories
+  -c, --contentDir string        filesystem path to content directory
+      --disableBrowserError      do not show build errors in the browser
+      --disableFastRender        enables full re-renders on changes
+      --disableKinds strings     disable different kind of pages (home, RSS etc.)
+      --disableLiveReload        watch without enabling live browser reload on rebuild
+      --enableGitInfo            add Git revision, date, author, and CODEOWNERS info to the pages
+      --forceSyncStatic          copy all files when static is changed.
+      --gc                       enable to run some cleanup tasks (remove unused cache files) after the build
+  -h, --help                     help for server
+      --ignoreCache              ignores the cache directory
+  -l, --layoutDir string         filesystem path to layout directory
+      --liveReloadPort int       port for live reloading (i.e. 443 in HTTPS proxy situations) (default -1)
+      --minify                   minify any supported output format (HTML, XML etc.)
+  -N, --navigateToChanged        navigate to changed content file on live browser reload
+      --noBuildLock              don't create .hugo_build.lock file
+      --noChmod                  don't sync permission mode of files
+      --noHTTPCache              prevent HTTP caching
+      --noTimes                  don't sync modification time of files
+  -O, --openBrowser              open the site in a browser after server startup
+      --panicOnWarning           panic on first WARNING log
+      --poll string              set this to a poll interval, e.g --poll 700ms, to use a poll based approach to watch for file system changes
+  -p, --port int                 port on which the server will listen (default 1313)
+      --pprof                    enable the pprof server (port 8080)
+      --printI18nWarnings        print missing translations
+      --printMemoryUsage         print memory usage to screen at intervals
+      --printPathWarnings        print warnings on duplicate target paths etc.
+      --printUnusedTemplates     print warnings on unused templates.
+      --renderSegments strings   named segments to render (configured in the segments config)
+      --renderStaticToDisk       serve static files from disk and dynamic files from memory
+      --templateMetrics          display metrics about template executions
+      --templateMetricsHints     calculate some improvement hints when combined with --templateMetrics
+  -t, --theme strings            themes to use (located in /themes/THEMENAME/)
+      --tlsAuto                  generate and use locally-trusted certificates.
+      --tlsCertFile string       path to TLS certificate file
+      --tlsKeyFile string        path to TLS key file
+      --trace file               write trace to file (not useful in general)
+  -w, --watch                    watch filesystem for changes and recreate as needed (default true)
+
+Global Flags:
+      --clock string               set the clock used by Hugo, e.g. --clock 2021-11-06T22:30:00.00+09:00
+      --config string              config file (default is hugo.yaml|json|toml)
+      --configDir string           config dir (default "config")
+  -d, --destination string         filesystem path to write files to
+  -e, --environment string         build environment
+      --ignoreVendorPaths string   ignores any _vendor for module paths matching the given Glob pattern
+      --logLevel string            log level (debug|info|warn|error)
+      --quiet                      build in quiet mode
+  -M, --renderToMemory             render to memory (mostly useful when running the server)
+  -s, --source string              filesystem path to read files relative from
+      --themesDir string           filesystem path to themes directory
+
+Use "hugo server [command] --help" for more information about a command.
+
+Error: command error: Unable to locate config file or config directory. Perhaps you need to create a new site.
+Run `hugo help new` for details.
+Failed to start Hugo server.
+==== Hugo Restart Wrapper ====
+gio 16 gen 2025, 20:13:14, UTC
+Executing manage_posts.sh with arguments: add neve Neve 2005-01-16T00:00:00 travel adventure,food,health,art,entertainment,science,lifestyle https://pbs.twimg.com/media/GhbHZuUXQAA4rUV?format=jpg&name=900x900 Default Alt Text Default Caption 
+Stopping Hugo server...
+Found processes on port 1313: 29371. Killing them...
+Processes on port 1313 killed successfully.
+Starting Hugo server...
+Hugo provides its own webserver which builds and serves the site.
+While hugo server is high performance, it is a webserver with limited options.
+
+The `hugo server` command will by default write and serve files from disk, but
+you can render to memory by using the `--renderToMemory` flag. This can be
+faster in some cases, but it will consume more memory.
+
+By default hugo will also watch your files for any changes you make and
+automatically rebuild the site. It will then live reload any open browser pages
+and push the latest content to them. As most Hugo sites are built in a fraction
+of a second, you will be able to save and see your changes nearly instantly.
+
+Usage:
+  hugo server [command] [flags]
+  hugo server [command]
+
+Aliases:
+  server, serve
+
+Available Commands:
+  trust       Install the local CA in the system trust store.
+
+Flags:
+      --appendPort               append port to baseURL (default true)
+  -b, --baseURL string           hostname (and path) to the root, e.g. https://spf13.com/
+      --bind string              interface to which the server will bind (default "127.0.0.1")
+  -D, --buildDrafts              include content marked as draft
+  -E, --buildExpired             include expired content
+  -F, --buildFuture              include content with publishdate in the future
+      --cacheDir string          filesystem path to cache directory
+      --cleanDestinationDir      remove files from destination not found in static directories
+  -c, --contentDir string        filesystem path to content directory
+      --disableBrowserError      do not show build errors in the browser
+      --disableFastRender        enables full re-renders on changes
+      --disableKinds strings     disable different kind of pages (home, RSS etc.)
+      --disableLiveReload        watch without enabling live browser reload on rebuild
+      --enableGitInfo            add Git revision, date, author, and CODEOWNERS info to the pages
+      --forceSyncStatic          copy all files when static is changed.
+      --gc                       enable to run some cleanup tasks (remove unused cache files) after the build
+  -h, --help                     help for server
+      --ignoreCache              ignores the cache directory
+  -l, --layoutDir string         filesystem path to layout directory
+      --liveReloadPort int       port for live reloading (i.e. 443 in HTTPS proxy situations) (default -1)
+      --minify                   minify any supported output format (HTML, XML etc.)
+  -N, --navigateToChanged        navigate to changed content file on live browser reload
+      --noBuildLock              don't create .hugo_build.lock file
+      --noChmod                  don't sync permission mode of files
+      --noHTTPCache              prevent HTTP caching
+      --noTimes                  don't sync modification time of files
+  -O, --openBrowser              open the site in a browser after server startup
+      --panicOnWarning           panic on first WARNING log
+      --poll string              set this to a poll interval, e.g --poll 700ms, to use a poll based approach to watch for file system changes
+  -p, --port int                 port on which the server will listen (default 1313)
+      --pprof                    enable the pprof server (port 8080)
+      --printI18nWarnings        print missing translations
+      --printMemoryUsage         print memory usage to screen at intervals
+      --printPathWarnings        print warnings on duplicate target paths etc.
+      --printUnusedTemplates     print warnings on unused templates.
+      --renderSegments strings   named segments to render (configured in the segments config)
+      --renderStaticToDisk       serve static files from disk and dynamic files from memory
+      --templateMetrics          display metrics about template executions
+      --templateMetricsHints     calculate some improvement hints when combined with --templateMetrics
+  -t, --theme strings            themes to use (located in /themes/THEMENAME/)
+      --tlsAuto                  generate and use locally-trusted certificates.
+      --tlsCertFile string       path to TLS certificate file
+      --tlsKeyFile string        path to TLS key file
+      --trace file               write trace to file (not useful in general)
+  -w, --watch                    watch filesystem for changes and recreate as needed (default true)
+
+Global Flags:
+      --clock string               set the clock used by Hugo, e.g. --clock 2021-11-06T22:30:00.00+09:00
+      --config string              config file (default is hugo.yaml|json|toml)
+      --configDir string           config dir (default "config")
+  -d, --destination string         filesystem path to write files to
+  -e, --environment string         build environment
+      --ignoreVendorPaths string   ignores any _vendor for module paths matching the given Glob pattern
+      --logLevel string            log level (debug|info|warn|error)
+      --quiet                      build in quiet mode
+  -M, --renderToMemory             render to memory (mostly useful when running the server)
+  -s, --source string              filesystem path to read files relative from
+      --themesDir string           filesystem path to themes directory
+
+Use "hugo server [command] --help" for more information about a command.
+
+Error: command error: Unable to locate config file or config directory. Perhaps you need to create a new site.
+Run `hugo help new` for details.
+Failed to start Hugo server.
+==== Hugo Restart Wrapper ====
+gio 16 gen 2025, 20:15:52, UTC
+Executing manage_posts.sh with arguments: add melo Melo 2022-01-16T00:00:00 inspiration adventure,food,health,art,entertainment,science,lifestyle https://pbs.twimg.com/media/GhamGxmXMAAOSpK?format=jpg&name=small Default Alt Text Default Caption 
+Stopping Hugo server...
+Found processes on port 1313: 31205. Killing them...
+Processes on port 1313 killed successfully.
+Starting Hugo server...
+Hugo provides its own webserver which builds and serves the site.
+While hugo server is high performance, it is a webserver with limited options.
+
+The `hugo server` command will by default write and serve files from disk, but
+you can render to memory by using the `--renderToMemory` flag. This can be
+faster in some cases, but it will consume more memory.
+
+By default hugo will also watch your files for any changes you make and
+automatically rebuild the site. It will then live reload any open browser pages
+and push the latest content to them. As most Hugo sites are built in a fraction
+of a second, you will be able to save and see your changes nearly instantly.
+
+Usage:
+  hugo server [command] [flags]
+  hugo server [command]
+
+Aliases:
+  server, serve
+
+Available Commands:
+  trust       Install the local CA in the system trust store.
+
+Flags:
+      --appendPort               append port to baseURL (default true)
+  -b, --baseURL string           hostname (and path) to the root, e.g. https://spf13.com/
+      --bind string              interface to which the server will bind (default "127.0.0.1")
+  -D, --buildDrafts              include content marked as draft
+  -E, --buildExpired             include expired content
+  -F, --buildFuture              include content with publishdate in the future
+      --cacheDir string          filesystem path to cache directory
+      --cleanDestinationDir      remove files from destination not found in static directories
+  -c, --contentDir string        filesystem path to content directory
+      --disableBrowserError      do not show build errors in the browser
+      --disableFastRender        enables full re-renders on changes
+      --disableKinds strings     disable different kind of pages (home, RSS etc.)
+      --disableLiveReload        watch without enabling live browser reload on rebuild
+      --enableGitInfo            add Git revision, date, author, and CODEOWNERS info to the pages
+      --forceSyncStatic          copy all files when static is changed.
+      --gc                       enable to run some cleanup tasks (remove unused cache files) after the build
+  -h, --help                     help for server
+      --ignoreCache              ignores the cache directory
+  -l, --layoutDir string         filesystem path to layout directory
+      --liveReloadPort int       port for live reloading (i.e. 443 in HTTPS proxy situations) (default -1)
+      --minify                   minify any supported output format (HTML, XML etc.)
+  -N, --navigateToChanged        navigate to changed content file on live browser reload
+      --noBuildLock              don't create .hugo_build.lock file
+      --noChmod                  don't sync permission mode of files
+      --noHTTPCache              prevent HTTP caching
+      --noTimes                  don't sync modification time of files
+  -O, --openBrowser              open the site in a browser after server startup
+      --panicOnWarning           panic on first WARNING log
+      --poll string              set this to a poll interval, e.g --poll 700ms, to use a poll based approach to watch for file system changes
+  -p, --port int                 port on which the server will listen (default 1313)
+      --pprof                    enable the pprof server (port 8080)
+      --printI18nWarnings        print missing translations
+      --printMemoryUsage         print memory usage to screen at intervals
+      --printPathWarnings        print warnings on duplicate target paths etc.
+      --printUnusedTemplates     print warnings on unused templates.
+      --renderSegments strings   named segments to render (configured in the segments config)
+      --renderStaticToDisk       serve static files from disk and dynamic files from memory
+      --templateMetrics          display metrics about template executions
+      --templateMetricsHints     calculate some improvement hints when combined with --templateMetrics
+  -t, --theme strings            themes to use (located in /themes/THEMENAME/)
+      --tlsAuto                  generate and use locally-trusted certificates.
+      --tlsCertFile string       path to TLS certificate file
+      --tlsKeyFile string        path to TLS key file
+      --trace file               write trace to file (not useful in general)
+  -w, --watch                    watch filesystem for changes and recreate as needed (default true)
+
+Global Flags:
+      --clock string               set the clock used by Hugo, e.g. --clock 2021-11-06T22:30:00.00+09:00
+      --config string              config file (default is hugo.yaml|json|toml)
+      --configDir string           config dir (default "config")
+  -d, --destination string         filesystem path to write files to
+  -e, --environment string         build environment
+      --ignoreVendorPaths string   ignores any _vendor for module paths matching the given Glob pattern
+      --logLevel string            log level (debug|info|warn|error)
+      --quiet                      build in quiet mode
+  -M, --renderToMemory             render to memory (mostly useful when running the server)
+  -s, --source string              filesystem path to read files relative from
+      --themesDir string           filesystem path to themes directory
+
+Use "hugo server [command] --help" for more information about a command.
+
+Error: command error: Unable to locate config file or config directory. Perhaps you need to create a new site.
+Run `hugo help new` for details.
+Failed to start Hugo server.
+==== Hugo Restart Wrapper ====
+gio 16 gen 2025, 20:21:57, UTC
+Executing manage_posts.sh with arguments: add melo Melo 2022-01-16T00:00:00 inspiration adventure,food,health,art,entertainment,science,lifestyle https://pbs.twimg.com/media/GhamGxmXMAAOSpK?format=jpg&name=small Default Alt Text Default Caption 
+Stopping Hugo server...
+Found processes on port 1313: 31898
+32743. Killing them...
+Processes on port 1313 killed successfully.
+Starting Hugo server...
+Hugo provides its own webserver which builds and serves the site.
+While hugo server is high performance, it is a webserver with limited options.
+
+The `hugo server` command will by default write and serve files from disk, but
+you can render to memory by using the `--renderToMemory` flag. This can be
+faster in some cases, but it will consume more memory.
+
+By default hugo will also watch your files for any changes you make and
+automatically rebuild the site. It will then live reload any open browser pages
+and push the latest content to them. As most Hugo sites are built in a fraction
+of a second, you will be able to save and see your changes nearly instantly.
+
+Usage:
+  hugo server [command] [flags]
+  hugo server [command]
+
+Aliases:
+  server, serve
+
+Available Commands:
+  trust       Install the local CA in the system trust store.
+
+Flags:
+      --appendPort               append port to baseURL (default true)
+  -b, --baseURL string           hostname (and path) to the root, e.g. https://spf13.com/
+      --bind string              interface to which the server will bind (default "127.0.0.1")
+  -D, --buildDrafts              include content marked as draft
+  -E, --buildExpired             include expired content
+  -F, --buildFuture              include content with publishdate in the future
+      --cacheDir string          filesystem path to cache directory
+      --cleanDestinationDir      remove files from destination not found in static directories
+  -c, --contentDir string        filesystem path to content directory
+      --disableBrowserError      do not show build errors in the browser
+      --disableFastRender        enables full re-renders on changes
+      --disableKinds strings     disable different kind of pages (home, RSS etc.)
+      --disableLiveReload        watch without enabling live browser reload on rebuild
+      --enableGitInfo            add Git revision, date, author, and CODEOWNERS info to the pages
+      --forceSyncStatic          copy all files when static is changed.
+      --gc                       enable to run some cleanup tasks (remove unused cache files) after the build
+  -h, --help                     help for server
+      --ignoreCache              ignores the cache directory
+  -l, --layoutDir string         filesystem path to layout directory
+      --liveReloadPort int       port for live reloading (i.e. 443 in HTTPS proxy situations) (default -1)
+      --minify                   minify any supported output format (HTML, XML etc.)
+  -N, --navigateToChanged        navigate to changed content file on live browser reload
+      --noBuildLock              don't create .hugo_build.lock file
+      --noChmod                  don't sync permission mode of files
+      --noHTTPCache              prevent HTTP caching
+      --noTimes                  don't sync modification time of files
+  -O, --openBrowser              open the site in a browser after server startup
+      --panicOnWarning           panic on first WARNING log
+      --poll string              set this to a poll interval, e.g --poll 700ms, to use a poll based approach to watch for file system changes
+  -p, --port int                 port on which the server will listen (default 1313)
+      --pprof                    enable the pprof server (port 8080)
+      --printI18nWarnings        print missing translations
+      --printMemoryUsage         print memory usage to screen at intervals
+      --printPathWarnings        print warnings on duplicate target paths etc.
+      --printUnusedTemplates     print warnings on unused templates.
+      --renderSegments strings   named segments to render (configured in the segments config)
+      --renderStaticToDisk       serve static files from disk and dynamic files from memory
+      --templateMetrics          display metrics about template executions
+      --templateMetricsHints     calculate some improvement hints when combined with --templateMetrics
+  -t, --theme strings            themes to use (located in /themes/THEMENAME/)
+      --tlsAuto                  generate and use locally-trusted certificates.
+      --tlsCertFile string       path to TLS certificate file
+      --tlsKeyFile string        path to TLS key file
+      --trace file               write trace to file (not useful in general)
+  -w, --watch                    watch filesystem for changes and recreate as needed (default true)
+
+Global Flags:
+      --clock string               set the clock used by Hugo, e.g. --clock 2021-11-06T22:30:00.00+09:00
+      --config string              config file (default is hugo.yaml|json|toml)
+      --configDir string           config dir (default "config")
+  -d, --destination string         filesystem path to write files to
+  -e, --environment string         build environment
+      --ignoreVendorPaths string   ignores any _vendor for module paths matching the given Glob pattern
+      --logLevel string            log level (debug|info|warn|error)
+      --quiet                      build in quiet mode
+  -M, --renderToMemory             render to memory (mostly useful when running the server)
+  -s, --source string              filesystem path to read files relative from
+      --themesDir string           filesystem path to themes directory
+
+Use "hugo server [command] --help" for more information about a command.
+
+Error: command error: Unable to locate config file or config directory. Perhaps you need to create a new site.
+Run `hugo help new` for details.
+Failed to start Hugo server.
+==== Hugo Restart Wrapper ====
+gio 16 gen 2025, 20:27:00, UTC
+Executing manage_posts.sh with arguments: delete melo
+Stopping Hugo server...
+Found processes on port 1313: 33651
+33658. Killing them...
+Processes on port 1313 killed successfully.
+Starting Hugo server...
+Hugo provides its own webserver which builds and serves the site.
+While hugo server is high performance, it is a webserver with limited options.
+
+The `hugo server` command will by default write and serve files from disk, but
+you can render to memory by using the `--renderToMemory` flag. This can be
+faster in some cases, but it will consume more memory.
+
+By default hugo will also watch your files for any changes you make and
+automatically rebuild the site. It will then live reload any open browser pages
+and push the latest content to them. As most Hugo sites are built in a fraction
+of a second, you will be able to save and see your changes nearly instantly.
+
+Usage:
+  hugo server [command] [flags]
+  hugo server [command]
+
+Aliases:
+  server, serve
+
+Available Commands:
+  trust       Install the local CA in the system trust store.
+
+Flags:
+      --appendPort               append port to baseURL (default true)
+  -b, --baseURL string           hostname (and path) to the root, e.g. https://spf13.com/
+      --bind string              interface to which the server will bind (default "127.0.0.1")
+  -D, --buildDrafts              include content marked as draft
+  -E, --buildExpired             include expired content
+  -F, --buildFuture              include content with publishdate in the future
+      --cacheDir string          filesystem path to cache directory
+      --cleanDestinationDir      remove files from destination not found in static directories
+  -c, --contentDir string        filesystem path to content directory
+      --disableBrowserError      do not show build errors in the browser
+      --disableFastRender        enables full re-renders on changes
+      --disableKinds strings     disable different kind of pages (home, RSS etc.)
+      --disableLiveReload        watch without enabling live browser reload on rebuild
+      --enableGitInfo            add Git revision, date, author, and CODEOWNERS info to the pages
+      --forceSyncStatic          copy all files when static is changed.
+      --gc                       enable to run some cleanup tasks (remove unused cache files) after the build
+  -h, --help                     help for server
+      --ignoreCache              ignores the cache directory
+  -l, --layoutDir string         filesystem path to layout directory
+      --liveReloadPort int       port for live reloading (i.e. 443 in HTTPS proxy situations) (default -1)
+      --minify                   minify any supported output format (HTML, XML etc.)
+  -N, --navigateToChanged        navigate to changed content file on live browser reload
+      --noBuildLock              don't create .hugo_build.lock file
+      --noChmod                  don't sync permission mode of files
+      --noHTTPCache              prevent HTTP caching
+      --noTimes                  don't sync modification time of files
+  -O, --openBrowser              open the site in a browser after server startup
+      --panicOnWarning           panic on first WARNING log
+      --poll string              set this to a poll interval, e.g --poll 700ms, to use a poll based approach to watch for file system changes
+  -p, --port int                 port on which the server will listen (default 1313)
+      --pprof                    enable the pprof server (port 8080)
+      --printI18nWarnings        print missing translations
+      --printMemoryUsage         print memory usage to screen at intervals
+      --printPathWarnings        print warnings on duplicate target paths etc.
+      --printUnusedTemplates     print warnings on unused templates.
+      --renderSegments strings   named segments to render (configured in the segments config)
+      --renderStaticToDisk       serve static files from disk and dynamic files from memory
+      --templateMetrics          display metrics about template executions
+      --templateMetricsHints     calculate some improvement hints when combined with --templateMetrics
+  -t, --theme strings            themes to use (located in /themes/THEMENAME/)
+      --tlsAuto                  generate and use locally-trusted certificates.
+      --tlsCertFile string       path to TLS certificate file
+      --tlsKeyFile string        path to TLS key file
+      --trace file               write trace to file (not useful in general)
+  -w, --watch                    watch filesystem for changes and recreate as needed (default true)
+
+Global Flags:
+      --clock string               set the clock used by Hugo, e.g. --clock 2021-11-06T22:30:00.00+09:00
+      --config string              config file (default is hugo.yaml|json|toml)
+      --configDir string           config dir (default "config")
+  -d, --destination string         filesystem path to write files to
+  -e, --environment string         build environment
+      --ignoreVendorPaths string   ignores any _vendor for module paths matching the given Glob pattern
+      --logLevel string            log level (debug|info|warn|error)
+      --quiet                      build in quiet mode
+  -M, --renderToMemory             render to memory (mostly useful when running the server)
+  -s, --source string              filesystem path to read files relative from
+      --themesDir string           filesystem path to themes directory
+
+Use "hugo server [command] --help" for more information about a command.
+
+Error: command error: Unable to locate config file or config directory. Perhaps you need to create a new site.
+Run `hugo help new` for details.
+Failed to start Hugo server.

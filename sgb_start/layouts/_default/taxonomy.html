@@ -1,0 +1,17 @@
+{{ define "main" }}
+<h1>Category: {{ .Title }}</h1>
+<h1 style="color:brown">Questo è Singolo d/n _default/taxonomy.html</h1>
+
+<ul>
+  {{- if .Pages }}
+  {{- range .Pages }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </li>
+  {{- end }}
+  {{- else }}
+    <li>Nessun contenuto disponibile per questa categoria.</li>
+  {{- end }}
+</ul>
+
+{{ end }}

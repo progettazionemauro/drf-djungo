@@ -1,0 +1,74 @@
+{{ define "main" }}
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">Film (DRF + Vue)</h1>
+  </header>
+
+  <div id="film-app">
+    <!-- Form -->
+    <form @submit.prevent="addFilm" style="display:grid;gap:.5rem;margin:1rem 0">
+      <div style="display:grid;gap:.5rem;grid-template-columns:1fr 1fr">
+        <input v-model.trim="newFilm.title" placeholder="Title" required />
+        <input v-model.trim="newFilm.link" placeholder="Link (https://…)" required />
+      </div>
+      <input v-model.trim="newFilm.image" placeholder="Image URL (optional)" />
+      <textarea v-model.trim="newFilm.description" placeholder="Description"></textarea>
+      <button :disabled="loading">[[ loading ? "Saving…" : "Add Film" ]]</button>
+      <div style="color:#b00020" v-if="error">[[ error ]]</div>
+    </form>
+
+    <!-- Lista -->
+    <ul style="list-style:none;padding:0">
+      <li v-for="film in films" :key="film.id"
+          style="border:1px solid var(--border);border-radius:.5rem;padding:.8rem;margin:.6rem 0">
+        <strong>[[ film.title ]]</strong><br/>
+        <a :href="film.link" target="_blank" rel="noopener">Visit</a><br/>
+        <small v-if="film.description">[[ film.description ]]</small>
+        <div v-if="film.image" style="margin-top:.4rem">
+          <img :src="film.image" alt="poster" style="max-width:160px;height:auto"/>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+  new Vue({
+    delimiters: ['[[', ']]'],
+    el: '#film-app',
+    data: {
+      films: [],
+      loading: false,
+      error: '',
+      newFilm: { title: '', link: '', description: '', image: '' }
+    },
+    mounted() { this.fetchFilms(); },
+    methods: {
+      async fetchFilms() {
+        this.error = '';
+        try {
+          const res = await axios.get(`${window.DJUNGO.API_BASE}/films/`);
+          this.films = res.data;
+        } catch (e) {
+          this.error = `GET failed: ${e.response ? e.response.status : e.message}`;
+        }
+      },
+      async addFilm() {
+        this.loading = true; this.error = '';
+        try {
+          const res = await axios.post(`${window.DJUNGO.API_BASE}/films/`, this.newFilm, {
+            headers: { 'Content-Type': 'application/json' }
+          });
+          this.films.unshift(res.data);
+          this.newFilm = { title: '', link: '', description: '', image: '' };
+        } catch (e) {
+          const body = e.response && e.response.data ? JSON.stringify(e.response.data) : e.message;
+          this.error = `POST failed: ${e.response ? e.response.status : ''} ${body}`;
+        } finally {
+          this.loading = false;
+        }
+      }
+    }
+  });
+  </script>
+</article>
+{{ end }}

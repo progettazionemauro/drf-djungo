@@ -1,0 +1,94 @@
+{{- define "main" }}
+<div style="color: red; font-size: 20px; text-align: center;">Layout aggiornato</div>
+
+{{- if (and site.Params.profileMode.enabled .IsHome) }}
+{{- partial "index_profile.html" . }}
+{{- else }}
+
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="post-description">
+    {{ .Description | markdownify }}
+  </div>
+  {{- end }}
+</header>
+
+{{- $pages := .Paginate (where .RegularPages "Type" "contenuti") }}
+
+
+<div class="posts">
+  {{- range $pages.Pages }}
+  <article class="post-entry">
+    <!-- Immagine di copertina -->
+    {{ with .Params.cover }}
+    <figure>
+      <img src="{{ .image }}" alt="{{ .alt }}">
+      <figcaption>{{ .caption }}</figcaption>
+    </figure>
+    {{ end }}
+
+    <!-- Immagini aggiuntive -->
+    {{ with .Params.images }}
+    <div class="additional-images">
+      {{ range . }}
+      <figure>
+        <img src="{{ .image }}" alt="{{ .alt }}">
+        <figcaption>{{ .caption }}</figcaption>
+      </figure>
+      {{ end }}
+    </div>
+    {{ else }}
+    <div style="color: gray; font-style: italic;">No additional images found.</div>
+    {{ end }}
+
+    <!-- Titolo e contenuto -->
+    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+    <p>{{ .Summary }}</p>
+
+    <!-- Tags -->
+    <footer class="post-footer">
+      {{- $tags := .Params.tags }}
+      <ul class="post-tags">
+        {{- if $tags }}
+        {{- range $tags }}
+        <li><a href="/tags/{{ . | urlize }}">{{ . }}</a></li>
+        {{- end }}
+        {{- else }}
+        <li>No tags available</li>
+        {{- end }}
+      </ul>
+    </footer>
+
+    <!-- Categories -->
+    <footer class="post-footer">
+      {{- $categories := .Params.categories }}
+      <ul class="post-categories">
+        {{- if $categories }}
+        {{- range $categories }}
+        <li><a href="/categories/{{ . | urlize }}">{{ . }}</a></li>
+        {{- end }}
+        {{- else }}
+        <li>No categories available</li>
+        {{- end }}
+      </ul>
+    </footer>
+  </article>
+  {{- end }}
+</div>
+
+{{- if gt $pages.TotalPages 1 }}
+<footer class="pagination">
+  {{ if $pages.HasPrev }}
+  <a href="{{ $pages.Prev.URL }}" class="prev">Previous</a>
+  {{ end }}
+  <a href="#">Page {{ $pages.Pager.PageNumber }} of {{ $pages.TotalPages }}</a>
+  {{ if $pages.HasNext }}
+  <a href="{{ $pages.Next.URL }}" class="next">Next</a>
+  {{ end }}
+</footer>
+{{- end }}
+
+{{- end }}
+{{- end }}

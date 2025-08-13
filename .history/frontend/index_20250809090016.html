@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Films – DRF + Vue (no Hugo yet)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 840px; margin: 2rem auto; padding: 0 1rem; }
+    form { display: grid; gap: .5rem; margin-bottom: 1rem; }
+    input, textarea, button { padding: .6rem .8rem; font-size: 1rem; }
+    ul { list-style: none; padding: 0; }
+    li { border: 1px solid #ddd; border-radius: .5rem; padding: .8rem; margin-bottom: .6rem; }
+    img { max-width: 160px; height: auto; display: block; margin-top: .4rem; }
+    .row { display: grid; gap: .6rem; grid-template-columns: 1fr 1fr; }
+    .error { color: #b00020; }
+  </style>
+</head>
+<body>
+  <h1>Film Database (DRF + Vue prototype)</h1>
+
+  <div id="app">
+    <form @submit.prevent="addFilm">
+      <div class="row">
+        <input v-model.trim="newFilm.title" placeholder="Title" required />
+        <input v-model.trim="newFilm.link" placeholder="Link (https://…)" required />
+      </div>
+      <input v-model.trim="newFilm.image" placeholder="Image URL (optional)" />
+      <textarea v-model.trim="newFilm.description" placeholder="Description"></textarea>
+      <button :disabled="loading">{{ loading ? "Saving…" : "Add Film" }}</button>
+      <div class="error" v-if="error">{{ error }}</div>
+    </form>
+
+    <ul>
+      <li v-for="film in films" :key="film.id">
+        <strong>{{ film.title }}</strong><br/>
+        <a :href="film.link" target="_blank" rel="noopener">Visit</a><br/>
+        <small v-if="film.description">{{ film.description }}</small>
+        <img v-if="film.image" :src="film.image" alt="poster"/>
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script>
+  // punta alla tua API DRF locale
+  const API_BASE = "http://127.0.0.1:8000/api";
+
+  new Vue({
+    el: '#app',
+    data: {
+      films: [],
+      loading: false,
+      error: '',
+      newFilm: { title: '', link: '', description: '', image: '' }
+    },
+    created() {
+      this.fetchFilms();
+    },
+    methods: {
+      async fetchFilms() {
+        this.error = '';
+        try {
+          const res = await fetch(`${API_BASE}/films/`);
+          if (!res.ok) throw new Error(`GET failed: ${res.status}`);
+          this.films = await res.json();
+        } catch (e) {
+          this.error = e.message;
+        }
+      },
+      async addFilm() {
+        this.loading = true; this.error = '';
+        try {
+          const res = await fetch(`${API_BASE}/films/`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(this.newFilm)
+          });
+          if (!res.ok) {
+            const body = await res.text();
+            throw new Error(`POST failed: ${res.status} ${body}`);
+          }
+          const film = await res.json();
+          this.films.unshift(film);
+          this.newFilm = { title: '', link: '', description: '', image: '' };
+        } catch (e) {
+          this.error = e.message;
+        } finally {
+          this.loading = false;
+        }
+      }
+    }
+  });
+  </script>
+</body>
+</html>
