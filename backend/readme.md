@@ -1,0 +1,711 @@
+#  Introduzione
+## 📖 Prefazione – Manifesto dell’Open Source e del Progetto _Djungō_
+
+Viviamo in un’epoca paradossale: siamo circondati da informazioni, ma allo stesso tempo prigionieri di una frammentazione che rende difficile raccoglierle, organizzarle, renderle vive nel momento in cui ne abbiamo bisogno. Prima ancora che l’intelligenza artificiale esplodesse, il marketing e la logica della segmentazione avevano già spezzettato la conoscenza in mille rivoli, rendendo arduo il compito di collegare e ricostruire un quadro unitario.
+
+Oggi l’IA si trova nel punto più alto mai raggiunto dal sapere umano. È vero: i progressi sono vertiginosi e ciò che oggi ci sembra avanzatissimo sarà presto obsoleto. Ma non illudiamoci: il futuro dell’IA non sarà accessibile a tutti. Pagamenti, restrizioni statali, interessi di mercato: tutto rema nella direzione di chiudere e recintare l’accesso a questa conoscenza.
+
+Non è la prima volta che accade. Negli anni ’80, Richard Stallman e la Free Software Foundation lanciarono un grido simile: la libertà del software non era un lusso per pochi hacker, ma una questione di civiltà. Quella battaglia diede vita al movimento del software libero e successivamente all’open source, gettando le basi per gran parte delle tecnologie che oggi usiamo senza quasi rendercene conto.
+
+Il progetto _Djungō_ si colloca su questa stessa linea storica: vuole essere un atto di liberazione.  
+Un sistema che unisce backend e frontend, pensato per non essere controllato da pochi, ma per restare nelle mani di chi lo usa.  
+Un sistema che può girare su un semplice PC locale, senza dipendere da grandi infrastrutture.  
+Un sistema che permette di immagazzinare i nostri articoli, ricordi e fonti sia online che in locale, restituendo all’individuo il controllo sulla propria informazione.
+
+Questo libro non è quindi soltanto un manuale tecnico. È un invito. È un manifesto. È la dichiarazione di un principio fondamentale: la conoscenza deve tornare ad essere **nostra**, gestibile, aggregabile, indipendente.
+
+----------
+
+## 📜 Manifesto dell’Open Source – versione sintetica
+
+1.  **La conoscenza deve essere libera.**  
+    Non più frammentata da marketing e segmentazioni di mercato.
+    
+2.  **L’IA è al suo apice, ma non sarà per tutti.**  
+    I muri di pagamento e le barriere istituzionali renderanno l’accesso sempre più elitario.
+    
+3.  **Il software deve restare nostro.**  
+    Backend e frontend devono girare ovunque: sul server come sul PC di casa.
+    Anche i tool collegati debbono essere open source.
+    
+4.  **Il progetto _Djungō_ nasce per ridare potere all’individuo.**  
+    Informazioni, articoli, ricordi: tutto deve essere archiviabile e aggregabile senza dipendere da terzi.
+    
+5.  **Open Source come atto di liberazione.**  
+    Non un vezzo tecnico, ma una scelta politica, culturale ed
+## Tools 
+Ogni manifesto che si rispetti non resta solo teoria: ha bisogno di strumenti concreti, quotidiani, che permettano di trasformare le idee in pratica. Nel mio caso, il punto di partenza è stato banale e rivoluzionario allo stesso tempo: **scrivere bene in Markdown**.
+
+### Perché Markdown?
+
+Markdown è il linguaggio di scrittura più semplice e potente per documentare progetti, creare appunti strutturati, redigere articoli e — soprattutto — per scrivere il celebre `README.md`, il biglietto da visita di ogni progetto su GitHub. È leggibile da chiunque come testo puro e al tempo stesso si converte in una formattazione elegante e standardizzata.
+
+In un mondo dominato da formati proprietari (Word, Pages, ecc.), Markdown è la scelta naturale per chi vuole libertà, leggerezza e portabilità.
+
+### Perché StackEdit?
+
+Ci sono molti editor di Markdown, ma il primo strumento che ho scelto è **StackEdit**:
+
+-   Funziona direttamente dal browser, senza installazioni pesanti.
+    
+-   Salva in locale (cache o localStorage), senza dipendere da un “server centrale”.
+    
+-   Si integra facilmente con **GitHub**, **Google Drive** e **Dropbox**, permettendo di sincronizzare i file Markdown.
+    
+-   Ha un’anteprima in tempo reale che ti fa vedere come il tuo testo diventerà una volta pubblicato.
+    
+
+StackEdit è, per me, il ponte ideale: da una parte la scrittura libera e immediata, dall’altra la possibilità di collegare tutto a GitHub, il luogo naturale dove ogni progetto open source trova casa.
+
+### Il legame con Visual Studio Code
+
+Naturalmente, StackEdit non è l’unico editor della mia cassetta degli attrezzi. Una volta scritto e rifinito un documento, passo in **Visual Studio Code** (VS Code). Qui entrano in gioco estensioni dedicate come:
+
+-   **Markdown All in One** (per formattare e gestire meglio i file `.md`),
+    
+-   **Paste Markdown** (per incollare direttamente testo già convertito),
+    
+-   **Markdown Preview Enhanced** (per avere un’anteprima curata).
+    
+
+VS Code diventa il laboratorio dove Markdown e codice convivono: lo stesso editor dove scrivo funzioni Python o configurazioni di Django è anche il luogo in cui rifinisco i miei `README.md`.
+
+### E infine: GitHub
+
+Il ciclo si chiude (o meglio, si apre al mondo) con GitHub. Lì il `README.md` non è un file qualunque: è la prima cosa che chiunque vede entrando nel repository. Un biglietto da visita, un manifesto del progetto, un segnale di serietà.  
+Grazie a StackEdit e VS Code, il `README.md` prende forma senza attriti e diventa pubblicabile su GitHub con un semplice commit.
+##  Scrittura
+- [Stackedit](https://stackedit.io/app#) 
+
+# 🚀 Deploy Djungō (blue-green) — Backend DRF + Frontend Hugo
+
+Questa guida descrive come mettere online un’istanza di **Django REST Framework** (backend) e **Hugo** (frontend statico) su un server Hetzner, adottando la strategia **blue-green deployment**.
+
+L’idea: mantenere due ambienti (`blue` e `green`) così che uno sia attivo e l’altro pronto per il prossimo deploy senza downtime.
+## ⚙️ Setup Tecnico – Ambienti e Deploy
+
+Il progetto _Djungō_ non vive solo di teoria: per funzionare davvero ha bisogno di una struttura tecnica solida.  
+In questa sezione documentiamo come mantenere in sincronia i tre ambienti fondamentali:
+
+- **Locale (sviluppo in VS Code)**  
+- **GitHub (backup e versionamento del codice)**  
+- **Hetzner (produzione con Django + Hugo)**  
+
+Il problema centrale è che le **variabili di ambiente** cambiano a seconda del contesto.  
+La soluzione: un sistema di **.env multipli**, un **settings.py intelligente** e uno **script di deploy** che tiene tutto in linea.
+
+---
+
+### 📂 Struttura dei file chiave
+
+drf_hugo_vue/
+├── backend/
+│ ├── backend/
+│ │ └── settings.py # configurato per .env multipli
+│ ├── .env.dev # ambiente locale (non su GitHub)
+│ ├── .env.prod # ambiente Hetzner (solo su server)
+│ ├── .env.example # modello committato su GitHub
+│ ├── manage.py
+│ └── static/ # cartella statica (locale)
+├── deploy_and_sync.sh # script di deploy sicuro
+└── .gitignore # aggiornato con esclusioni critiche
+
+yaml
+Copia codice
+
+---
+
+### 📝 `.gitignore`
+
+Evitare che segreti e DB finiscano su GitHub è la prima regola.  
+Ecco il file aggiornato:
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Virtualenv & cache
+env/
+venv/
+__pycache__/
+*.pyc
+
+# DB locali
+db.sqlite3
+*.sqlite3
+backups/
+
+# Statici e build Hugo
+.static/
+staticfiles/
+public/
+sgb_start/public/
+
+# Log
+*.log
+.settings_debug.log
+.manage_posts.log
+.DS_Store
+*.cache
+Crea anche .env.example (questo va su GitHub):
+
+env
+Copia codice
+SECRET_KEY=CHANGE_ME
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
+CSRF_TRUSTED_ORIGINS=http://localhost:8000
+DATABASE_URL=sqlite:///db.sqlite3
+DJANGO_STATIC_PATH=static
+DJANGO_STATIC_ROOT=staticfiles
+CORS_ALLOWED_ORIGINS=http://localhost:1313
+HUGO_ENV=development
+HUGO_BASEURL=http://localhost:1313
+⚙️ Dipendenze necessarie
+Installa queste librerie nel tuo venv:
+
+bash
+Copia codice
+pip install python-dotenv dj-database-url django-cors-headers
+🧩 settings.py intelligente
+Il file backend/settings.py è stato riscritto per:
+
+caricare automaticamente .env, .env.prod o .env.dev;
+
+permettere override via ENV_FILE;
+
+gestire il DB via dj-database-url;
+
+integrare corsheaders;
+
+scrivere un file settings_debug.log con i valori effettivi.
+
+python
+Copia codice
+import os
+import logging
+from pathlib import Path
+from dotenv import load_dotenv
+import dj_database_url
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# === Caricamento .env (ordine: .env -> .env.prod -> .env.dev) ===
+env_candidates = [
+    BASE_DIR / ".env",
+    BASE_DIR / ".env.prod",
+    BASE_DIR / ".env.dev",
+]
+override = os.getenv("ENV_FILE")
+if override and (BASE_DIR / override).exists():
+    env_path = BASE_DIR / override
+else:
+    env_path = next((p for p in env_candidates if p.exists()), None)
+
+if env_path:
+    if os.getenv("PRINT_ENV_LOAD", "1") == "1":
+        print(f"🔄 Loading env file: {env_path}")
+    load_dotenv(dotenv_path=env_path)
+else:
+    print("⚠️ Nessun file .env trovato tra .env, .env.prod, .env.dev")
+
+# === Config base ===
+SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-change-me")
+DEBUG = os.getenv("DEBUG", "False").strip().lower() in ("true", "1", "yes")
+ALLOWED_HOSTS = [h.strip() for h in os.getenv("ALLOWED_HOSTS", "127.0.0.1,localhost").split(",") if h.strip()]
+CSRF_TRUSTED_ORIGINS = [o.strip() for o in os.getenv("CSRF_TRUSTED_ORIGINS", "").split(",") if o.strip()]
+
+INSTALLED_APPS = [
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "rest_framework",
+    "corsheaders",
+    "movies",
+]
+
+MIDDLEWARE = [
+    "django.middleware.security.SecurityMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
+    "django.middleware.csrf.CsrfViewMiddleware",
+    "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.middleware.clickjacking.XFrameOptionsMiddleware",
+]
+
+if os.getenv("CORS_ALLOW_ALL", "0") in ("1", "true", "True"):
+    CORS_ALLOW_ALL_ORIGINS = True
+else:
+    CORS_ALLOWED_ORIGINS = [o.strip() for o in os.getenv(
+        "CORS_ALLOWED_ORIGINS",
+        "http://localhost:1313,http://127.0.0.1:1313,http://127.0.0.1:8000"
+    ).split(",") if o.strip()]
+
+ROOT_URLCONF = "backend.urls"
+
+TEMPLATES = [
+    {
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [BASE_DIR / "templates"],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "debug": DEBUG,
+            "context_processors": [
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
+            ],
+        },
+    },
+]
+
+WSGI_APPLICATION = "backend.wsgi.application"
+
+DATABASES = {
+    "default": dj_database_url.parse(
+        os.getenv("DATABASE_URL", "sqlite:///db.sqlite3"),
+        conn_max_age=600,
+        ssl_require=False if DEBUG else False,
+    )
+}
+if DATABASES["default"]["ENGINE"] == "django.db.backends.sqlite3":
+    name = DATABASES["default"]["NAME"]
+    if not os.path.isabs(str(name)):
+        DATABASES["default"]["NAME"] = str(BASE_DIR / name)
+
+STATIC_URL = "/static/"
+STATIC_ROOT = os.getenv("DJANGO_STATIC_ROOT", str(BASE_DIR / "staticfiles"))
+STATICFILES_DIRS = [ BASE_DIR / os.getenv("DJANGO_STATIC_PATH", "static") ]
+
+REST_FRAMEWORK = { "DEFAULT_AUTHENTICATION_CLASSES": [] }
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Debug dump
+try:
+    with open(BASE_DIR / "settings_debug.log", "w") as f:
+        f.write(f"DEBUG: {DEBUG}\n")
+        f.write(f"ALLOWED_HOSTS: {ALLOWED_HOSTS}\n")
+        f.write(f"STATICFILES_DIRS: {STATICFILES_DIRS}\n")
+        f.write(f"STATIC_ROOT: {STATIC_ROOT}\n")
+        f.write(f"DATABASE: {DATABASES}\n")
+except Exception as e:
+    print("⚠️ Impossibile scrivere settings_debug.log:", e)
+🌍 Profili .env
+🔧 .env.dev (locale)
+env
+Copia codice
+SECRET_KEY=django-dev-only-change-me
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
+CSRF_TRUSTED_ORIGINS=http://localhost:8000,http://127.0.0.1:8000
+DATABASE_URL=sqlite:///db.sqlite3
+
+DJANGO_STATIC_PATH=static
+DJANGO_STATIC_ROOT=staticfiles
+
+CORS_ALLOWED_ORIGINS=http://localhost:1313,http://127.0.0.1:1313,http://127.0.0.1:8000
+HUGO_ENV=development
+HUGO_BASEURL=http://localhost:1313
+🌐 .env.prod (Hetzner)
+env
+Copia codice
+SECRET_KEY=***PUT_A_STRONG_SECRET***
+DEBUG=False
+ALLOWED_HOSTS=sgbh.org,*.sgbh.org,127.0.0.1,localhost
+CSRF_TRUSTED_ORIGINS=https://sgbh.org,https://www.sgbh.org
+DATABASE_URL=sqlite:////opt/djungo/db.sqlite3
+
+DJANGO_STATIC_PATH=static
+DJANGO_STATIC_ROOT=/opt/djungo/staticfiles
+
+CORS_ALLOWED_ORIGINS=https://sgbh.org,https://www.sgbh.org
+HUGO_ENV=production
+HUGO_BASEURL=https://sgbh.org
+📋 .env.example (committato)
+env
+Copia codice
+SECRET_KEY=CHANGE_ME
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
+CSRF_TRUSTED_ORIGINS=http://localhost:8000
+DATABASE_URL=sqlite:///db.sqlite3
+DJANGO_STATIC_PATH=static
+DJANGO_STATIC_ROOT=staticfiles
+CORS_ALLOWED_ORIGINS=http://localhost:1313
+HUGO_ENV=development
+HUGO_BASEURL=http://localhost:1313
+🛠️ Correzione STATICFILES_DIRS
+Per evitare warning in locale:
+
+bash
+Copia codice
+mkdir -p ~/Scrivania/drf_hugo_vue/backend/static
+oppure cambiare nel .env.dev:
+
+env
+Copia codice
+DJANGO_STATIC_PATH=assets/static
+✅ Health check
+bash
+Copia codice
+cd ~/Scrivania/drf_hugo_vue/backend
+python manage.py check
+Risultato atteso:
+
+nessun avviso .env;
+
+nessun warning staticfiles.W004.
+
+🚚 Script di Deploy (deploy_and_sync.sh)
+Mantiene in sync locale → GitHub → Hetzner, builda Hugo, fa backup DB.
+Da lanciare dal root del repo:
+
+bash
+Copia codice
+./deploy_and_sync.sh "Deploy: movies API + Hugo rebuild"
+bash
+Copia codice
+#!/bin/bash
+set -euo pipefail
+
+REMOTE_HOST="root@157.180.16.0"
+REMOTE_DIR="/opt/djungo"
+REMOTE_DB="$REMOTE_DIR/db.sqlite3"
+LOCAL_DB="./db.sqlite3"
+PASSWORD_FILE="./hetzner_password.txt"
+COMMIT_MSG=${1:-"🚀 Auto deploy + Hugo build"}
+
+if [ ! -f "$PASSWORD_FILE" ]; then
+  echo "❌ Password file $PASSWORD_FILE not found. Aborting."
+  exit 1
+fi
+SSH_PASSWORD=$(<"$PASSWORD_FILE")
+
+echo "📦 [1/6] Push code to GitHub..."
+git add .
+git reset "$LOCAL_DB" 2>/dev/null || true
+git commit -m "$COMMIT_MSG" || echo "ℹ️ Nothing to commit."
+git push origin main
+
+echo "🧹 [2/6] Clean Hugo public/ on Hetzner..."
+sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no $REMOTE_HOST "cd $REMOTE_DIR/sgb_start && rm -rf public || true"
+
+echo "🌐 [3/6] Pull latest code on Hetzner..."
+sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no $REMOTE_HOST \
+  "cd $REMOTE_DIR && git fetch origin && git reset --hard origin/main"
+
+echo "🏗️ [4/6] Build Hugo (prod) on Hetzner..."
+sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no $REMOTE_HOST "
+  set -e
+  export ENV_FILE=.env.prod
+  set -a; [ -f \"$REMOTE_DIR/\$ENV_FILE\" ] && . \"$REMOTE_DIR/\$ENV_FILE\"; set +a
+  cd $REMOTE_DIR/sgb_start
+  hugo --minify --baseURL \"\$HUGO_BASEURL\"
+"
+
+# (Opzionale) restart servizi Gunicorn/Nginx
+# sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no $REMOTE_HOST "systemctl restart gunicorn && systemctl reload nginx"
+
+echo "🧬 [5/6] Backup DB to local backups/"
+mkdir -p backups/db
+STAMP=$(date '+%Y%m%d_%H%M%S')
+LOCAL_BACKUP="backups/db/db_${STAMP}.sqlite3"
+sshpass -p "$SSH_PASSWORD" scp $REMOTE_HOST:$REMOTE_DB "$LOCAL_BACKUP" || echo "⚠️ DB download skipped/failed."
+
+echo "✅ Done!"
+📡 Runbook
+Locale (sviluppo):
+
+bash
+Copia codice
+cd ~/Scrivania/drf_hugo_vue/backend
+python manage.py runserver 0.0.0.0:8000
+Hugo in locale:
+
+bash
+Copia codice
+cd ~/Scrivania/drf_hugo_vue/sgb_start
+hugo server -D
+Deploy in produzione (Hetzner):
+
+bash
+Copia codice
+./deploy_and_sync.sh "Deploy: new movies API + Hugo rebuild"
+🔍 Checklist finale
+.env.dev presente in backend/ e non committato
+
+.env.prod presente su Hetzner (/opt/djungo/)
+
+.env.example committato su GitHub
+
+settings_debug.log generato correttamente
+
+sgb_start/public/ escluso dal repo
+
+DB backup salvato in backups/db/ (mai su GitHub)
+
+yaml
+Copia codice
+
+---
+
+Vuoi che ti prepari anche la parte **successiva al deploy** (nginx + systemd su Hetzner) così completiamo il capitolo “Setup Tecnico” del README, o preferisci fermarci qui?
+
+---------
+
+## 0) Obiettivi e naming (blue-green)
+
+-   **Backend (DRF)**: gira su porta interna `9001`, dietro Nginx.
+    
+    > La porta non è esposta direttamente a Internet: solo Nginx ci parla.
+    
+-   **Frontend (Hugo)**: statici serviti in `/var/www/djungo2` sotto il path `/djungo2/`.
+    
+    > Manteniamo i file statici fuori dal codice del backend.
+    
+-   **API nuove**: raggiungibili via `/api2/` → proxy a `127.0.0.1:9001`.
+    
+    > Usare un path separato evita conflitti con API esistenti.
+    
+-   **Ambienti**: niente variabili condivise tra locale e server.
+    
+    > Ogni ambiente ha il suo `.env` dedicato (server ≠ locale).
+    
+
+----------
+
+## 1) Preparazione server (una volta sola)
+
+`apt update && apt -y install git curl build-essential ufw python3-pip python3-venv nginx
+
+ufw allow OpenSSH
+ufw allow 80
+ufw allow 443
+ufw --force enable` 
+
+> Installa tool di base, Python, Nginx e abilita firewall con accesso solo a **SSH, HTTP e HTTPS**.
+
+----------
+
+## 2) Struttura cartelle (nuovo “green”)
+
+`mkdir -p /opt/djungo2/app mkdir -p /opt/djungo2/run mkdir -p /opt/djungo2/log chown -R root:root /opt/djungo2` 
+
+> `/opt/djungo2` diventa la root del nuovo stack “green”:
+> 
+> -   `app`: codice e virtualenv
+>     
+> -   `run`: pidfile e socket
+>     
+> -   `log`: log centralizzati
+>     
+
+----------
+
+## 3) Trasferimento progetto (scegli uno)
+
+### A) Clonare da Git (consigliato)
+
+`cd /opt/djungo2/app
+git clone GIT_REPO_URL .
+git checkout BRANCH_VERDE # es. main, staging, release/x.y` 
+
+> Approccio pulito, versionato e ripetibile.
+
+----------
+
+### B) Da locale con `rsync`
+
+`rsync -avz --delete --exclude '.venv' --exclude '.git' \
+./PERCORSO_PROGETTO/ root@65.21.176.227:/opt/djungo2/app/` 
+
+> Più rapido se non vuoi usare Git, ma meno tracciabile.  
+> **Nota**: escludiamo `.venv` e `.git`.
+
+----------
+
+## 4) Virtualenv + dipendenze
+
+`cd /opt/djungo2/app
+python3 -m venv .venv source .venv/bin/activate
+pip install --upgrade pip wheel
+pip install -r requirements.txt` 
+
+> Ambiente isolato per le dipendenze Python.
+
+----------
+
+## 5) Variabili d’ambiente (separate!)
+
+Crea solo sul server:
+
+`nano /opt/djungo2/app/.env` 
+
+Esempio:
+
+`DJANGO_SETTINGS_MODULE=yourproject.settings.production SECRET_KEY=***metti-chiave-server*** DEBUG=False  ALLOWED_HOSTS=65.21.176.227,example.com DATABASE_URL=postgres://USER:PASS@HOST:5432/DBNAME` 
+
+Permessi:
+
+`chmod 600 /opt/djungo2/app/.env` 
+
+> Mai committare `.env`!  
+> Deve esistere solo sul server.
+
+----------
+
+## 6) Migrazioni + statici (prima accensione)
+
+`cd /opt/djungo2/app source .venv/bin/activate
+python manage.py migrate --noinput
+python manage.py collectstatic --noinput` 
+
+> Esegui database migrations e raccogli i file statici.
+
+----------
+
+## 7) Gunicorn come service systemd
+
+Crea `/etc/systemd/system/djungo2.service`:
+
+`[Unit]  Description=Djungō DRF (green) via Gunicorn After=network.target [Service]  User=root WorkingDirectory=/opt/djungo2/app EnvironmentFile=/opt/djungo2/app/.env ExecStart=/opt/djungo2/app/.venv/bin/gunicorn yourproject.wsgi:application \
+  --bind 127.0.0.1:9001 \
+  --workers 3 \
+  --timeout 60 \
+  --access-logfile /opt/djungo2/log/gunicorn_access.log \
+  --error-logfile /opt/djungo2/log/gunicorn_error.log \
+  --pid /opt/djungo2/run/gunicorn.pid Restart=always [Install]  WantedBy=multi-user.target` 
+
+Avvio:
+
+`systemctl daemon-reload
+systemctl enable djungo2
+systemctl start djungo2
+systemctl status djungo2 --no-pager` 
+
+> Usa `curl -I http://127.0.0.1:9001/` per testare la risposta del backend.
+
+----------
+
+## 8) Hugo build e pubblicazione
+
+Build locale:
+
+`hugo --minify
+rsync -avz ./public/ root@65.21.176.227:/var/www/djungo2/` 
+
+Permessi:
+
+`mkdir -p /var/www/djungo2 chown -R www-data:www-data /var/www/djungo2` 
+
+> Hugo genera file statici → trasferiti in `/var/www/djungo2`.
+
+----------
+
+## 9) Nginx (reverse proxy + statici)
+
+Crea `/etc/nginx/sites-available/djungo2.conf`:
+
+`server { listen  80; server_name  65.21.176.227; # Hugo static under /djungo2/  location /djungo2/ { alias /var/www/djungo2/; index index.html; try_files  $uri  $uri/ /index.html;
+    } # Django API under /api2/  location /api2/ { proxy_pass http://127.0.0.1:9001/; proxy_set_header Host $host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_set_header X-Forwarded-Proto $scheme; client_max_body_size  20m;
+    } # sicurezza base  add_header X-Frame-Options SAMEORIGIN; add_header X-Content-Type-Options nosniff; add_header Referrer-Policy strict-origin-when-cross-origin; add_header X-XSS-Protection "1; mode=block";
+}` 
+
+Attiva:
+
+`ln -s /etc/nginx/sites-available/djungo2.conf /etc/nginx/sites-enabled/
+nginx -t && systemctl reload nginx` 
+
+Test esterno:
+
+-   `http://65.21.176.227/djungo2/` → Hugo
+    
+-   `http://65.21.176.227/api2/` → DRF
+    
+
+----------
+
+## 10) Healthcheck
+
+Aggiungi in DRF un endpoint `/health/` che risponde:
+
+`{"ok":  true}` 
+
+> Serve a monitorare lo stato del servizio.
+
+----------
+
+## 11) Logrotate
+
+Crea `/etc/logrotate.d/djungo2`:
+
+`/opt/djungo2/log/*.log {
+    daily
+    rotate 14
+    compress
+    missingok
+    notifempty
+    copytruncate
+}` 
+
+> Mantieni log sotto controllo.
+
+----------
+
+## 12) Hardening (post-verifica)
+
+-   SSH:
+    
+    `sed -i 's/^PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
+    systemctl restart ssh` 
+    
+-   HTTPS con Certbot:
+    
+    `apt -y install certbot python3-certbot-nginx
+    certbot --nginx -d TUO_DOMINIO` 
+    
+
+----------
+
+## 13) GitHub Actions (step successivo)
+
+Workflow tipico:
+
+-   build + test
+    
+-   rsync/ssh → `/opt/djungo2/app`
+    
+-   `pip install -r requirements.txt`
+    
+-   `migrate`, `collectstatic`
+    
+-   restart Gunicorn
+    
+-   healthcheck su `/api2/health/`
+    
+
+Segreti → GitHub Secrets (SSH key di deploy dedicata).
+
+----------
+
+## ✅ Criticità già viste (e fixate)
+
+-   **Chiavi SSH**: usa `~/.ssh/config` con `IdentitiesOnly yes`.
+    
+-   **sshd_config**: occhio agli override in `sshd_config.d/`.
+    
+-   **Permessi**: `.env` (600), `.ssh` (700), `authorized_keys` (600).
+    
+-   **Nginx**: attenzione al trailing slash in `proxy_pass`.
+    
+-   **Blue-green**: mantieni vecchio stack finché il nuovo non è validato.
+    
+
+----------

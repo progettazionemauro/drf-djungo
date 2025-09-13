@@ -1,0 +1,56 @@
+🔹 1. Tool online
+
+Ci sono servizi che convertono testo “grezzo” in Markdown pulito:
+
+markdowntool.com
+ → converte elenchi, testo, link.
+
+pandoc online
+ → puoi incollare testo e ottenere .md.
+
+🔹 2. Estensioni per VS Code
+
+Per automatizzare direttamente dentro VS Code:
+
+Markdown All in One → aggiunge formattazione automatica (Alt+Shift+F per allineare liste, indenti, ecc.).
+
+Paste Markdown → intercetta il testo incollato e lo converte subito in Markdown (link, tabelle, code fence).
+
+MarkdownLint → segnala errori di sintassi (bullet errati, indentazioni sbagliate).
+
+🔹 3. Script da terminale (se vuoi batch)
+
+Puoi usare Pandoc (strumento standard per conversioni):
+
+sudo apt install pandoc
+
+
+Poi:
+
+pandoc input.txt -f markdown -t markdown -o output.md
+
+
+Questo “normalizza” il Markdown (elenchi, titoli, code block).
+
+🔹 4. Workflow pratico
+
+Copi il testo da ChatGPT.
+
+Lo incolli in un file .txt.
+
+Lanci:
+
+pandoc note.txt -f markdown -t markdown -o note.md
+
+
+→ ottieni un Markdown pulito.
+
+Apri note.md in VS Code e vedi il preview leggibile.
+
+📌 Per un flusso continuo (scrivere man mano un libro), secondo me la combo migliore è:
+
+Estensione “Paste Markdown” (conversione in tempo reale quando incolli).
+
+Markdown All in One per riordinare elenchi e tabelle.
+
+All’occorrenza, Pandoc se devi pulire blocchi grossi in batch.

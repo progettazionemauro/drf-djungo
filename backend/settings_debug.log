@@ -1,0 +1,5 @@
+DEBUG: True
+ALLOWED_HOSTS: ['localhost', '127.0.0.1']
+STATICFILES_DIRS: [PosixPath('/home/mauro/Scrivania/drf_hugo_vue/backend/static')]
+STATIC_ROOT: staticfiles
+DATABASE: {'default': {'ENGINE': 'django.db.backends.sqlite3', 'USER': '', 'PASSWORD': '', 'HOST': '', 'PORT': '', 'NAME': '/home/mauro/Scrivania/drf_hugo_vue/backend/db.sqlite3', 'CONN_MAX_AGE': 600, 'CONN_HEALTH_CHECKS': False, 'DISABLE_SERVER_SIDE_CURSORS': False}}

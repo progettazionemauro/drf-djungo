@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Food on My New Hugo Site</title>
+    <link>http://localhost:1313/categories/food/</link>
+    <description>Recent content in Food on My New Hugo Site</description>
+    <generator>Hugo -- 0.123.7</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 28 Jul 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/food/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Africano</title>
+      <link>http://localhost:1313/contenuti/africano/</link>
+      <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contenuti/africano/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Astratto 1</title>
+      <link>http://localhost:1313/contenuti/astratto_1/</link>
+      <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contenuti/astratto_1/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Coppia</title>
+      <link>http://localhost:1313/contenuti/coppia/</link>
+      <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contenuti/coppia/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Orban</title>
+      <link>http://localhost:1313/contenuti/orban/</link>
+      <pubDate>Sat, 26 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contenuti/orban/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>USA</title>
+      <link>http://localhost:1313/contenuti/usa/</link>
+      <pubDate>Sun, 06 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contenuti/usa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>insotti</title>
+      <link>http://localhost:1313/contenuti/insetti/</link>
+      <pubDate>Wed, 29 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contenuti/insetti/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lyz</title>
+      <link>http://localhost:1313/contenuti/lyz/</link>
+      <pubDate>Thu, 09 Jan 2025 07:44:45 +0000</pubDate>
+      <guid>http://localhost:1313/contenuti/lyz/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cibo</title>
+      <link>http://localhost:1313/contenuti/cibo/</link>
+      <pubDate>Fri, 12 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contenuti/cibo/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
