@@ -42,8 +42,10 @@
     .dj-row  { display:grid; gap:.5rem; grid-template-columns:1fr 1fr; }
     .dj-list { list-style:none; padding:0; }
     .dj-item { border:1px solid var(--border); border-radius:.5rem; padding:.8rem; margin:.6rem 0; }
-    .dj-err  { color:#b00020; }
+    .dj-err  { color:#b00020; margin-top:.5rem; }
     .dj-img  { max-width:160px; height:auto; display:block; margin-top:.4rem; }
+    .dj-actions { display:flex; gap:.5rem; margin-top:.5rem; flex-wrap: wrap; }
+    .dj-inline { display:grid; gap:.4rem; margin-top:.5rem; }
   </style>
 
   <div id="film-app">
@@ -51,7 +53,7 @@
     <form @submit.prevent="addFilm" class="dj-form">
       <div class="dj-row">
         <input v-model.trim="newFilm.title" placeholder="Title" required />
-        <input v-model.trim="newFilm.link"  placeholder="Link (https://…)" required />
+        <input v-model.trim="newFilm.link" placeholder="Link (https://…)" required />
       </div>
       <input v-model.trim="newFilm.image" placeholder="Image URL (optional)" />
       <textarea v-model.trim="newFilm.description" placeholder="Description"></textarea>
@@ -62,27 +64,58 @@
     
     <ul class="dj-list">
       <li class="dj-item" v-for="film in films" :key="film.id">
-        <strong>[[ film.title ]]</strong><br/>
-        <a :href="film.link" target="_blank" rel="noopener">Visit</a><br/>
-        <small v-if="film.description">[[ film.description ]]</small>
-        <img v-if="film.image" :src="film.image" alt="poster" class="dj-img"/>
+        
+        <template v-if="editId !== film.id">
+          <strong>[[ film.title ]]</strong><br/>
+          <a :href="film.link" target="_blank" rel="noopener">Visit</a><br/>
+          <small v-if="film.description">[[ film.description ]]</small>
+          <img v-if="film.image" :src="film.image" alt="poster" class="dj-img"/>
+
+          <div class="dj-actions">
+            <button type="button" @click="startEdit(film)">Edit</button>
+            <button type="button" @click="deleteFilm(film)">Delete</button>
+          </div>
+        </template>
+
+        
+        <template v-else>
+          <div class="dj-inline">
+            <input v-model.trim="editDraft.title" placeholder="Title" />
+            <input v-model.trim="editDraft.link" placeholder="Link (https://…)" />
+            <input v-model.trim="editDraft.image" placeholder="Image URL" />
+            <textarea v-model.trim="editDraft.description" placeholder="Description"></textarea>
+          </div>
+          <div class="dj-actions">
+            <button type="button" @click="saveEdit(film)">Save</button>
+            <button type="button" @click="cancelEdit">Cancel</button>
+          </div>
+        </template>
       </li>
     </ul>
   </div>
 
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
   <script>
   new Vue({
-    delimiters: ['[[', ']]'], 
+    delimiters: ['[[', ']]'],
     el: '#film-app',
     data: {
       films: [],
+      newFilm: { title: '', link: '', description: '', image: '' },
+      editId: null,
+      editDraft: {},
       loading: false,
       error: '',
-      newFilm: { title: '', link: '', description: '', image: '' },
       api: (window.DJUNGO && window.DJUNGO.API_BASE) || 'http://127.0.0.1:8000/api'
     },
-    mounted() { this.fetchFilms(); },
+    mounted() {
+      this.fetchFilms();
+    },
     methods: {
+      
       async fetchFilms() {
         this.error = '';
         try {
@@ -92,17 +125,60 @@
           this.error = `GET failed: ${e.response ? e.response.status : e.message}`;
         }
       },
+
+      
       async addFilm() {
         this.loading = true; this.error = '';
         try {
           const res = await axios.post(`${this.api}/films/`, this.newFilm, {
             headers: { 'Content-Type': 'application/json' }
           });
-        this.films.unshift(res.data);
-        this.newFilm = { title: '', link: '', description: '', image: '' };
+          this.films.unshift(res.data);
+          this.newFilm = { title: '', link: '', description: '', image: '' };
         } catch (e) {
-          const body = e.response && e.response.data ? JSON.stringify(e.response.data) : e.message;
+          const body = e.response?.data ? JSON.stringify(e.response.data) : e.message;
           this.error = `POST failed: ${e.response ? e.response.status : ''} ${body}`;
+        } finally {
+          this.loading = false;
+        }
+      },
+
+      
+      startEdit(film) {
+        this.editId = film.id;
+        this.editDraft = { ...film };
+      },
+      cancelEdit() {
+        this.editId = null;
+        this.editDraft = {};
+      },
+      async saveEdit(film) {
+        this.loading = true; this.error = '';
+        try {
+          const res = await axios.patch(`${this.api}/films/${film.id}/`, this.editDraft, {
+            headers: { 'Content-Type': 'application/json' }
+          });
+          const idx = this.films.findIndex(f => f.id === film.id);
+          if (idx !== -1) this.$set(this.films, idx, res.data);
+          this.cancelEdit();
+        } catch (e) {
+          const body = e.response?.data ? JSON.stringify(e.response.data) : e.message;
+          this.error = `PATCH failed: ${e.response ? e.response.status : ''} ${body}`;
+        } finally {
+          this.loading = false;
+        }
+      },
+
+      
+      async deleteFilm(film) {
+        if (!confirm(`Eliminare "${film.title}"?`)) return;
+        this.loading = true; this.error = '';
+        try {
+          await axios.delete(`${this.api}/films/${film.id}/`);
+          this.films = this.films.filter(f => f.id !== film.id);
+        } catch (e) {
+          const body = e.response?.data ? JSON.stringify(e.response.data) : e.message;
+          this.error = `DELETE failed: ${e.response ? e.response.status : ''} ${body}`;
         } finally {
           this.loading = false;
         }
