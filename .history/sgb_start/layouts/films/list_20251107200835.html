@@ -1,0 +1,65 @@
+<script>
+new Vue({
+  delimiters: ['[[', ']]'],
+  el: '#film-app',
+  data: {
+    films: [],
+    loading: false,
+    error: '',
+    newFilm: { title: '', link: '', description: '', image: '' },
+    api: (window.API_BASE || 'http://127.0.0.1:8000/api').replace(/\/+$/,''),
+    es: null  // EventSource handler
+  },
+  mounted() {
+    this.fetchFilms();
+    this.openSSE();
+  },
+  beforeDestroy() {
+    if (this.es) { try { this.es.close(); } catch (_) {} }
+  },
+  methods: {
+    async fetchFilms() {
+      this.error = '';
+      try {
+        const res = await axios.get(`${this.api}/films/`, {
+          headers: { 'Accept': 'application/json' }
+        });
+        this.films = Array.isArray(res.data) ? res.data : (res.data.results || []);
+      } catch (e) {
+        this.error = `GET failed: ${e.response ? e.response.status : e.message}`;
+      }
+    },
+    async addFilm() {
+      this.loading = true; this.error = '';
+      try {
+        const res = await axios.post(`${this.api}/films/`, this.newFilm, {
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+        });
+        // Aggiorno subito la UI; arriverà comunque anche l'evento SSE
+        this.films.unshift(res.data);
+        this.newFilm = { title: '', link: '', description: '', image: '' };
+      } catch (e) {
+        const body = e.response && e.response.data ? JSON.stringify(e.response.data) : e.message;
+        this.error = `POST failed: ${e.response ? e.response.status : ''} ${body}`;
+      } finally {
+        this.loading = false;
+      }
+    },
+    openSSE() {
+      const url = `${this.api}/events/`;
+      try {
+        this.es = new EventSource(url);
+        this.es.addEventListener('open',  () => console.debug('[SSE] connected'));
+        this.es.addEventListener('error', (e) => console.warn('[SSE] error', e));
+        // Evento inviato dai signals Django
+        this.es.addEventListener('films-changed', () => {
+          // Un singolo refresh “soft” dei dati
+          this.fetchFilms();
+        });
+      } catch (e) {
+        console.error('[SSE] not supported or failed', e);
+      }
+    }
+  }
+});
+</script>

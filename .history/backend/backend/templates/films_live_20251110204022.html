@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Films — Live</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 20px; }
+    .small { color: #666; font-size: 0.9rem; }
+    table { border-collapse: collapse; width: 100%; margin-top: .75rem; }
+    th, td { border: 1px solid #ddd; padding: .5rem; vertical-align: top; }
+    th { background: #f7f7f7; text-align: left; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  </style>
+</head>
+<body>
+  <h1>Films — Live (auto-refresh)</h1>
+  <div class="small">
+    Fonte dati: <code>/api/films/?format=json</code> — Aggiornamento automatico ogni <span id="period">1500</span> ms
+    <br>Ultimo refresh: <span id="ts">—</span>
+  </div>
+
+  <table id="tbl">
+    <thead>
+      <tr><th>ID</th><th>Title</th><th>Link</th><th>Description</th><th>Image</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+  (function () {
+    // Se hai già un param in Hugo che punta all’API, non serve qui (stesso dominio)
+    const API = '/api';                   // stesso host di Django
+    const PERIOD = 1500;                  // 1.5 secondi (modificabile)
+    document.getElementById('period').textContent = PERIOD;
+
+    const $tbody = document.querySelector('#tbl tbody');
+    const $ts = document.getElementById('ts');
+
+    async function load() {
+      try {
+        const res = await fetch(`${API}/films/?format=json`, {
+          headers: { 'Accept': 'application/json' },
+          cache: 'no-store'
+        });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+
+        // data può essere array o {results:[...]} a seconda di DRF/pagination
+        const rows = Array.isArray(data) ? data : (data.results || []);
+        $tbody.innerHTML = rows.map(f => `
+          <tr>
+            <td>${f.id ?? ''}</td>
+            <td>${escapeHtml(f.title ?? '')}</td>
+            <td>${f.link ? `<a href="${escapeAttr(f.link)}" target="_blank" rel="noopener">open</a>` : ''}</td>
+            <td>${escapeHtml(f.description ?? '')}</td>
+            <td>${f.image ? `<img src="${escapeAttr(f.image)}" alt="" style="max-width:120px;">` : ''}</td>
+          </tr>
+        `).join('');
+
+        $ts.textContent = new Date().toLocaleTimeString();
+      } catch (err) {
+        console.error('Load failed:', err);
+      }
+    }
+
+    function escapeHtml(s){ return String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+    function escapeAttr(s){ return escapeHtml(s); }
+
+    load();                    // primo caricamento
+    setInterval(load, PERIOD); // auto-refresh
+  })();
+  </script>
+</body>
+</html>

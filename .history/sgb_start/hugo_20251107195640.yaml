@@ -1,0 +1,82 @@
+baseURL: "/"
+languageCode: en-us
+title: My New Hugo Site
+theme: ["PaperMod"]
+
+params:
+  apiBase: "http://127.0.0.1:8000/api"   # DRF locale
+  homeInfoParams:
+    Title: "Benve to My Website!"
+    Content: |
+      Questa è la home page del sito. Qui puoi navigare nelle sezioni disponibili:
+      - [Vai alla sezione principale](/contenuti/)
+      - [Esplora altre categorie](/categories/)
+  socialIcons:
+    - name: "kofi"
+      url: "https://kofi.com"
+    - name: "x"
+      url: "https://x.com"
+  ShowBreadCrumbs: true
+  ShowReadingTime: true
+  ShowSharingButtons: true
+  ShowPostNavLinks: true
+
+  # PaperMod: include assets/js/films.js automaticamente (Hugo Pipes)
+  customJS:
+    - "js/films.js"
+    
+
+menu:
+  main:
+    - identifier: Contenuti
+      name: Contenuti
+      url: /contenuti/
+      weight: 10
+    - identifier: Search
+      name: Search
+      url: search
+      weight: 10
+    - identifier: Store Locator
+      name: Store
+      url: /store_locator/about/
+      weight: 10
+    - identifier: categories
+      name: Categories
+      url : /categories/
+      weight: 10
+    - identifier: tags
+      name: Tags
+      url : /tags/
+      weight: 10
+    - identifier: archives
+      name: Archives
+      url : /archives/
+      weight: 10
+    - Identifier: Json
+      name: Tabella Json
+      url: /data_from_json/data_json
+      weight: 30
+    - identifier: Endpoint
+      name: Endpoint
+      url: /data_from_endpoint/data_from_endpoint
+      weight: 60
+    - identifier: Vue_Endpoint
+      name: Vue Endpoint
+      url: /vue_retrieve/vue_retrieve      
+      weight: 60
+    - identifier: Django Retrieve
+      name: Django Retrieve
+      url: /django_retrieve/django_retrieve     
+      weight: 60
+    - identifier: Films            # <— opzionale: link diretto alla sezione
+      name: Films
+      url: /films/
+      weight: 70
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+ignoreLogs: ["error-remote-getjson"]
