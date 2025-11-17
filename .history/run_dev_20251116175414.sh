@@ -11,9 +11,7 @@ BACKEND_DIR="backend"
 FRONTEND_DIR="sgb_start"
 VENV_DIR="env"
 
-# Forza uso config di sviluppo in Django
-export ENV_FILE=".env.dev"
-export PRINT_ENV_LOAD=1
+
 
 DJANGO_HOST="127.0.0.1"
 DJANGO_PORT="${DJANGO_PORT:-8000}"
